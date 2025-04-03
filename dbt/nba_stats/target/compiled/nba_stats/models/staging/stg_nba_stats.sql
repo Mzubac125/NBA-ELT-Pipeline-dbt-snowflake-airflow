@@ -1,0 +1,1 @@
+select * from MASTER.STAGE.nba_stats

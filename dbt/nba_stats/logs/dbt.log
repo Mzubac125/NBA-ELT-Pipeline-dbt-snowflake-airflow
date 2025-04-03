@@ -1,0 +1,1676 @@
+[0m10:40:17.789641 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1092766c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108894bc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108896270>]}
+
+
+============================== 10:40:17.792775 | fa1dcc56-cbe0-4f58-b8ca-22dfbc9c351e ==============================
+[0m10:40:17.792775 [info ] [MainThread]: Running with dbt=1.9.2
+[0m10:40:17.793167 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': '/Users/miloszubac/nba_stats/logs', 'profiles_dir': '/Users/miloszubac/.dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt run', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m10:40:18.620775 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'fa1dcc56-cbe0-4f58-b8ca-22dfbc9c351e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12a7f19d0>]}
+[0m10:40:18.646579 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'fa1dcc56-cbe0-4f58-b8ca-22dfbc9c351e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x129073a70>]}
+[0m10:40:18.647234 [info ] [MainThread]: Registered adapter: snowflake=1.9.1
+[0m10:40:18.843988 [debug] [MainThread]: checksum: 12b12750b70de726cfd89136b8e24afc3f3e77597a97bff40ab7e5f9b39d5e18, vars: {}, profile: , target: , version: 1.9.2
+[0m10:40:18.844448 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m10:40:18.844654 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'fa1dcc56-cbe0-4f58-b8ca-22dfbc9c351e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x138012240>]}
+[0m10:40:19.382226 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.nba_stats.marts
+[0m10:40:19.387702 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'fa1dcc56-cbe0-4f58-b8ca-22dfbc9c351e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x138514a40>]}
+[0m10:40:19.420384 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/miloszubac/nba_stats/target/manifest.json
+[0m10:40:19.421385 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/miloszubac/nba_stats/target/semantic_manifest.json
+[0m10:40:19.431367 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'fa1dcc56-cbe0-4f58-b8ca-22dfbc9c351e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x138593590>]}
+[0m10:40:19.431641 [info ] [MainThread]: Found 1 model, 2 sources, 472 macros
+[0m10:40:19.431817 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'fa1dcc56-cbe0-4f58-b8ca-22dfbc9c351e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x138589eb0>]}
+[0m10:40:19.432604 [info ] [MainThread]: 
+[0m10:40:19.432785 [info ] [MainThread]: Concurrency: 10 threads (target='dev')
+[0m10:40:19.432927 [info ] [MainThread]: 
+[0m10:40:19.433172 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m10:40:19.433579 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_MASTER'
+[0m10:40:19.477920 [debug] [ThreadPool]: Using snowflake connection "list_MASTER"
+[0m10:40:19.478223 [debug] [ThreadPool]: On list_MASTER: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "connection_name": "list_MASTER"} */
+show terse schemas in database MASTER
+    limit 10000
+[0m10:40:19.478378 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:40:20.504224 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 1.026 seconds
+[0m10:40:20.506021 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_MASTER, now list_MASTER_STAGE)
+[0m10:40:20.513686 [debug] [ThreadPool]: Using snowflake connection "list_MASTER_STAGE"
+[0m10:40:20.513934 [debug] [ThreadPool]: On list_MASTER_STAGE: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "connection_name": "list_MASTER_STAGE"} */
+show objects in MASTER.STAGE limit 10000;
+[0m10:40:20.700385 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 0.186 seconds
+[0m10:40:20.705878 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'fa1dcc56-cbe0-4f58-b8ca-22dfbc9c351e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x13853e7b0>]}
+[0m10:40:20.709102 [debug] [Thread-1 (]: Began running node model.nba_stats.nba_stats
+[0m10:40:20.709987 [info ] [Thread-1 (]: 1 of 1 START sql view model STAGE.nba_stats .................................... [RUN]
+[0m10:40:20.710724 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_MASTER_STAGE, now model.nba_stats.nba_stats)
+[0m10:40:20.711264 [debug] [Thread-1 (]: Began compiling node model.nba_stats.nba_stats
+[0m10:40:20.722819 [debug] [Thread-1 (]: Writing injected SQL for node "model.nba_stats.nba_stats"
+[0m10:40:20.724490 [debug] [Thread-1 (]: Began executing node model.nba_stats.nba_stats
+[0m10:40:20.727155 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.nba_stats"
+[0m10:40:20.727631 [debug] [Thread-1 (]: On model.nba_stats.nba_stats: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.nba_stats"} */
+select current_warehouse() as warehouse
+[0m10:40:20.920132 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.192 seconds
+[0m10:40:20.925116 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.nba_stats"
+[0m10:40:20.925925 [debug] [Thread-1 (]: On model.nba_stats.nba_stats: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.nba_stats"} */
+use warehouse compute_wh
+[0m10:40:21.028074 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.101 seconds
+[0m10:40:21.058513 [debug] [Thread-1 (]: Dropping relation "MASTER"."STAGE"."NBA_STATS" because it is of type table
+[0m10:40:21.065349 [debug] [Thread-1 (]: Applying DROP to: "MASTER"."STAGE"."NBA_STATS"
+[0m10:40:21.071237 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.nba_stats"
+[0m10:40:21.071622 [debug] [Thread-1 (]: On model.nba_stats.nba_stats: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.nba_stats"} */
+drop table if exists "MASTER"."STAGE"."NBA_STATS" cascade
+[0m10:40:21.270890 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.199 seconds
+[0m10:40:21.289373 [debug] [Thread-1 (]: Writing runtime sql for node "model.nba_stats.nba_stats"
+[0m10:40:21.291156 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.nba_stats"
+[0m10:40:21.291625 [debug] [Thread-1 (]: On model.nba_stats.nba_stats: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.nba_stats"} */
+create or replace   view MASTER.STAGE.nba_stats
+  
+   as (
+    select * from MASTER.STAGE.nba_stats
+  );
+[0m10:40:21.445012 [debug] [Thread-1 (]: Snowflake adapter: Snowflake query id: 01bb6650-0001-6bd7-0002-b4020001814e
+[0m10:40:21.445833 [debug] [Thread-1 (]: Snowflake adapter: Snowflake error: 002003 (42S02): SQL compilation error:
+Object 'MASTER.STAGE.NBA_STATS' does not exist or not authorized.
+[0m10:40:21.446666 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.nba_stats"
+[0m10:40:21.447199 [debug] [Thread-1 (]: On model.nba_stats.nba_stats: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.nba_stats"} */
+use warehouse COMPUTE_WH
+[0m10:40:21.516372 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.068 seconds
+[0m10:40:21.527204 [debug] [Thread-1 (]: Database Error in model nba_stats (models/staging/nba_stats.sql)
+  002003 (42S02): SQL compilation error:
+  Object 'MASTER.STAGE.NBA_STATS' does not exist or not authorized.
+  compiled code at target/run/nba_stats/models/staging/nba_stats.sql
+[0m10:40:21.530380 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fa1dcc56-cbe0-4f58-b8ca-22dfbc9c351e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x138b9bf80>]}
+[0m10:40:21.531377 [error] [Thread-1 (]: 1 of 1 ERROR creating sql view model STAGE.nba_stats ........................... [[31mERROR[0m in 0.82s]
+[0m10:40:21.532198 [debug] [Thread-1 (]: Finished running node model.nba_stats.nba_stats
+[0m10:40:21.532861 [debug] [Thread-13 ]: Marking all children of 'model.nba_stats.nba_stats' to be skipped because of status 'error'.  Reason: Database Error in model nba_stats (models/staging/nba_stats.sql)
+  002003 (42S02): SQL compilation error:
+  Object 'MASTER.STAGE.NBA_STATS' does not exist or not authorized.
+  compiled code at target/run/nba_stats/models/staging/nba_stats.sql.
+[0m10:40:21.535350 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:40:21.535698 [debug] [MainThread]: Connection 'model.nba_stats.nba_stats' was left open.
+[0m10:40:21.536015 [debug] [MainThread]: On model.nba_stats.nba_stats: Close
+[0m10:40:21.643397 [info ] [MainThread]: 
+[0m10:40:21.644262 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 2.21 seconds (2.21s).
+[0m10:40:21.645265 [debug] [MainThread]: Command end result
+[0m10:40:21.672369 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/miloszubac/nba_stats/target/manifest.json
+[0m10:40:21.673972 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/miloszubac/nba_stats/target/semantic_manifest.json
+[0m10:40:21.678638 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/miloszubac/nba_stats/target/run_results.json
+[0m10:40:21.678935 [info ] [MainThread]: 
+[0m10:40:21.679269 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m10:40:21.679539 [info ] [MainThread]: 
+[0m10:40:21.679844 [error] [MainThread]:   Database Error in model nba_stats (models/staging/nba_stats.sql)
+  002003 (42S02): SQL compilation error:
+  Object 'MASTER.STAGE.NBA_STATS' does not exist or not authorized.
+  compiled code at target/run/nba_stats/models/staging/nba_stats.sql
+[0m10:40:21.680108 [info ] [MainThread]: 
+[0m10:40:21.680383 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m10:40:21.683930 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 3.9322493, "process_in_blocks": "0", "process_kernel_time": 0.491376, "process_mem_max_rss": "204439552", "process_out_blocks": "0", "process_user_time": 3.953399}
+[0m10:40:21.684431 [debug] [MainThread]: Command `dbt run` failed at 10:40:21.684300 after 3.93 seconds
+[0m10:40:21.685035 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108db9220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1093d7a70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1383d04a0>]}
+[0m10:40:21.685409 [debug] [MainThread]: Flushing usage events
+[0m10:40:21.894747 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:42:06.079018 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1064c72c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10675bc20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10675b9e0>]}
+
+
+============================== 10:42:06.082676 | dfd9f804-d5aa-4384-8544-0d5ca788ff1b ==============================
+[0m10:42:06.082676 [info ] [MainThread]: Running with dbt=1.9.2
+[0m10:42:06.083054 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/Users/miloszubac/nba_stats/logs', 'profiles_dir': '/Users/miloszubac/.dbt', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt run', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m10:42:06.917182 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'dfd9f804-d5aa-4384-8544-0d5ca788ff1b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1062f5580>]}
+[0m10:42:06.942730 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'dfd9f804-d5aa-4384-8544-0d5ca788ff1b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x127bdd580>]}
+[0m10:42:06.943355 [info ] [MainThread]: Registered adapter: snowflake=1.9.1
+[0m10:42:07.047045 [debug] [MainThread]: checksum: 12b12750b70de726cfd89136b8e24afc3f3e77597a97bff40ab7e5f9b39d5e18, vars: {}, profile: , target: , version: 1.9.2
+[0m10:42:07.101760 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m10:42:07.102092 [debug] [MainThread]: Partial parsing: updated file: nba_stats://models/staging/nba_stats.sql
+[0m10:42:07.210627 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.nba_stats.marts
+[0m10:42:07.216635 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'dfd9f804-d5aa-4384-8544-0d5ca788ff1b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x15aaf6630>]}
+[0m10:42:07.268333 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/miloszubac/nba_stats/target/manifest.json
+[0m10:42:07.269433 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/miloszubac/nba_stats/target/semantic_manifest.json
+[0m10:42:07.279463 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'dfd9f804-d5aa-4384-8544-0d5ca788ff1b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x15aadd5b0>]}
+[0m10:42:07.279722 [info ] [MainThread]: Found 1 model, 2 sources, 472 macros
+[0m10:42:07.279905 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'dfd9f804-d5aa-4384-8544-0d5ca788ff1b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x127c2cd40>]}
+[0m10:42:07.280688 [info ] [MainThread]: 
+[0m10:42:07.280869 [info ] [MainThread]: Concurrency: 10 threads (target='dev')
+[0m10:42:07.281008 [info ] [MainThread]: 
+[0m10:42:07.281252 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m10:42:07.281700 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_MASTER'
+[0m10:42:07.310301 [debug] [ThreadPool]: Using snowflake connection "list_MASTER"
+[0m10:42:07.310574 [debug] [ThreadPool]: On list_MASTER: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "connection_name": "list_MASTER"} */
+show terse schemas in database MASTER
+    limit 10000
+[0m10:42:07.310751 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:42:08.191773 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.881 seconds
+[0m10:42:08.196763 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_MASTER, now list_MASTER_STAGE)
+[0m10:42:08.211486 [debug] [ThreadPool]: Using snowflake connection "list_MASTER_STAGE"
+[0m10:42:08.212002 [debug] [ThreadPool]: On list_MASTER_STAGE: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "connection_name": "list_MASTER_STAGE"} */
+show objects in MASTER.STAGE limit 10000;
+[0m10:42:08.388503 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.176 seconds
+[0m10:42:08.393489 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'dfd9f804-d5aa-4384-8544-0d5ca788ff1b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x15afaf440>]}
+[0m10:42:08.396478 [debug] [Thread-1 (]: Began running node model.nba_stats.nba_stats
+[0m10:42:08.397277 [info ] [Thread-1 (]: 1 of 1 START sql view model STAGE.nba_stats .................................... [RUN]
+[0m10:42:08.397897 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_MASTER_STAGE, now model.nba_stats.nba_stats)
+[0m10:42:08.398384 [debug] [Thread-1 (]: Began compiling node model.nba_stats.nba_stats
+[0m10:42:08.408682 [debug] [Thread-1 (]: Writing injected SQL for node "model.nba_stats.nba_stats"
+[0m10:42:08.409708 [debug] [Thread-1 (]: Began executing node model.nba_stats.nba_stats
+[0m10:42:08.412134 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.nba_stats"
+[0m10:42:08.412581 [debug] [Thread-1 (]: On model.nba_stats.nba_stats: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.nba_stats"} */
+select current_warehouse() as warehouse
+[0m10:42:08.600401 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.187 seconds
+[0m10:42:08.604612 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.nba_stats"
+[0m10:42:08.605248 [debug] [Thread-1 (]: On model.nba_stats.nba_stats: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.nba_stats"} */
+use warehouse compute_wh
+[0m10:42:08.677298 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.071 seconds
+[0m10:42:08.715183 [debug] [Thread-1 (]: Writing runtime sql for node "model.nba_stats.nba_stats"
+[0m10:42:08.716434 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.nba_stats"
+[0m10:42:08.716779 [debug] [Thread-1 (]: On model.nba_stats.nba_stats: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.nba_stats"} */
+create or replace   view MASTER.STAGE.nba_stats
+  
+   as (
+    select * from MASTER.STAGE.salaries
+  );
+[0m10:42:09.196849 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.479 seconds
+[0m10:42:09.230022 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.nba_stats"
+[0m10:42:09.230587 [debug] [Thread-1 (]: On model.nba_stats.nba_stats: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.nba_stats"} */
+use warehouse COMPUTE_WH
+[0m10:42:09.307714 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.077 seconds
+[0m10:42:09.314698 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'dfd9f804-d5aa-4384-8544-0d5ca788ff1b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x15aadc5f0>]}
+[0m10:42:09.315764 [info ] [Thread-1 (]: 1 of 1 OK created sql view model STAGE.nba_stats ............................... [[32mSUCCESS 1[0m in 0.91s]
+[0m10:42:09.316583 [debug] [Thread-1 (]: Finished running node model.nba_stats.nba_stats
+[0m10:42:09.318506 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:42:09.319019 [debug] [MainThread]: Connection 'model.nba_stats.nba_stats' was left open.
+[0m10:42:09.319469 [debug] [MainThread]: On model.nba_stats.nba_stats: Close
+[0m10:42:09.434721 [info ] [MainThread]: 
+[0m10:42:09.435725 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 2.15 seconds (2.15s).
+[0m10:42:09.437239 [debug] [MainThread]: Command end result
+[0m10:42:09.513840 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/miloszubac/nba_stats/target/manifest.json
+[0m10:42:09.514788 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/miloszubac/nba_stats/target/semantic_manifest.json
+[0m10:42:09.517842 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/miloszubac/nba_stats/target/run_results.json
+[0m10:42:09.518040 [info ] [MainThread]: 
+[0m10:42:09.518266 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m10:42:09.518426 [info ] [MainThread]: 
+[0m10:42:09.518588 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m10:42:09.520326 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 3.4814332, "process_in_blocks": "0", "process_kernel_time": 0.430374, "process_mem_max_rss": "200916992", "process_out_blocks": "0", "process_user_time": 3.539796}
+[0m10:42:09.520550 [debug] [MainThread]: Command `dbt run` succeeded at 10:42:09.520505 after 3.48 seconds
+[0m10:42:09.520749 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1220c1730>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x15ac36750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x15ac37920>]}
+[0m10:42:09.520938 [debug] [MainThread]: Flushing usage events
+[0m10:42:09.815443 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:43:37.133239 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111b43bf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11355bb60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11355b8f0>]}
+
+
+============================== 10:43:37.136379 | 36b96df8-c50f-4e56-8679-29b9b5dd3663 ==============================
+[0m10:43:37.136379 [info ] [MainThread]: Running with dbt=1.9.2
+[0m10:43:37.136729 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/Users/miloszubac/nba_stats/logs', 'profiles_dir': '/Users/miloszubac/.dbt', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt run', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m10:43:37.978485 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '36b96df8-c50f-4e56-8679-29b9b5dd3663', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11534dc10>]}
+[0m10:43:38.004195 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '36b96df8-c50f-4e56-8679-29b9b5dd3663', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10729ff80>]}
+[0m10:43:38.004824 [info ] [MainThread]: Registered adapter: snowflake=1.9.1
+[0m10:43:38.110448 [debug] [MainThread]: checksum: 12b12750b70de726cfd89136b8e24afc3f3e77597a97bff40ab7e5f9b39d5e18, vars: {}, profile: , target: , version: 1.9.2
+[0m10:43:38.166114 [debug] [MainThread]: Partial parsing enabled: 1 files deleted, 1 files added, 0 files changed.
+[0m10:43:38.166432 [debug] [MainThread]: Partial parsing: added file: nba_stats://models/staging/stg_nba_salaries.sql
+[0m10:43:38.166585 [debug] [MainThread]: Partial parsing: deleted file: nba_stats://models/staging/nba_stats.sql
+[0m10:43:38.275794 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.nba_stats.marts
+[0m10:43:38.281924 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '36b96df8-c50f-4e56-8679-29b9b5dd3663', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1462f6480>]}
+[0m10:43:38.313825 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/miloszubac/nba_stats/target/manifest.json
+[0m10:43:38.315060 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/miloszubac/nba_stats/target/semantic_manifest.json
+[0m10:43:38.325053 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '36b96df8-c50f-4e56-8679-29b9b5dd3663', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1462d97c0>]}
+[0m10:43:38.325321 [info ] [MainThread]: Found 1 model, 2 sources, 472 macros
+[0m10:43:38.325498 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '36b96df8-c50f-4e56-8679-29b9b5dd3663', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x146035ca0>]}
+[0m10:43:38.326286 [info ] [MainThread]: 
+[0m10:43:38.326477 [info ] [MainThread]: Concurrency: 10 threads (target='dev')
+[0m10:43:38.326621 [info ] [MainThread]: 
+[0m10:43:38.326863 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m10:43:38.327281 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_MASTER'
+[0m10:43:38.355693 [debug] [ThreadPool]: Using snowflake connection "list_MASTER"
+[0m10:43:38.355957 [debug] [ThreadPool]: On list_MASTER: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "connection_name": "list_MASTER"} */
+show terse schemas in database MASTER
+    limit 10000
+[0m10:43:38.356111 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:43:39.137845 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.782 seconds
+[0m10:43:39.141686 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_MASTER, now list_MASTER_STAGE)
+[0m10:43:39.155845 [debug] [ThreadPool]: Using snowflake connection "list_MASTER_STAGE"
+[0m10:43:39.156314 [debug] [ThreadPool]: On list_MASTER_STAGE: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "connection_name": "list_MASTER_STAGE"} */
+show objects in MASTER.STAGE limit 10000;
+[0m10:43:39.316382 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 0.159 seconds
+[0m10:43:39.322420 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '36b96df8-c50f-4e56-8679-29b9b5dd3663', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1465cbe60>]}
+[0m10:43:39.325953 [debug] [Thread-1 (]: Began running node model.nba_stats.stg_nba_salaries
+[0m10:43:39.326759 [info ] [Thread-1 (]: 1 of 1 START sql view model STAGE.stg_nba_salaries ............................. [RUN]
+[0m10:43:39.327384 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_MASTER_STAGE, now model.nba_stats.stg_nba_salaries)
+[0m10:43:39.327891 [debug] [Thread-1 (]: Began compiling node model.nba_stats.stg_nba_salaries
+[0m10:43:39.337883 [debug] [Thread-1 (]: Writing injected SQL for node "model.nba_stats.stg_nba_salaries"
+[0m10:43:39.338892 [debug] [Thread-1 (]: Began executing node model.nba_stats.stg_nba_salaries
+[0m10:43:39.342221 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.stg_nba_salaries"
+[0m10:43:39.342857 [debug] [Thread-1 (]: On model.nba_stats.stg_nba_salaries: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_salaries"} */
+select current_warehouse() as warehouse
+[0m10:43:39.426459 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.083 seconds
+[0m10:43:39.430707 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.stg_nba_salaries"
+[0m10:43:39.431746 [debug] [Thread-1 (]: On model.nba_stats.stg_nba_salaries: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_salaries"} */
+use warehouse compute_wh
+[0m10:43:39.514394 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.081 seconds
+[0m10:43:39.551723 [debug] [Thread-1 (]: Writing runtime sql for node "model.nba_stats.stg_nba_salaries"
+[0m10:43:39.552969 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.stg_nba_salaries"
+[0m10:43:39.553366 [debug] [Thread-1 (]: On model.nba_stats.stg_nba_salaries: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_salaries"} */
+create or replace   view MASTER.STAGE.stg_nba_salaries
+  
+   as (
+    select * from MASTER.STAGE.salaries
+  );
+[0m10:43:40.020554 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.466 seconds
+[0m10:43:40.052046 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.stg_nba_salaries"
+[0m10:43:40.052687 [debug] [Thread-1 (]: On model.nba_stats.stg_nba_salaries: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_salaries"} */
+use warehouse COMPUTE_WH
+[0m10:43:40.192343 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.139 seconds
+[0m10:43:40.202602 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '36b96df8-c50f-4e56-8679-29b9b5dd3663', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10729eed0>]}
+[0m10:43:40.203722 [info ] [Thread-1 (]: 1 of 1 OK created sql view model STAGE.stg_nba_salaries ........................ [[32mSUCCESS 1[0m in 0.87s]
+[0m10:43:40.204585 [debug] [Thread-1 (]: Finished running node model.nba_stats.stg_nba_salaries
+[0m10:43:40.206275 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:43:40.206745 [debug] [MainThread]: Connection 'model.nba_stats.stg_nba_salaries' was left open.
+[0m10:43:40.207120 [debug] [MainThread]: On model.nba_stats.stg_nba_salaries: Close
+[0m10:43:40.296622 [info ] [MainThread]: 
+[0m10:43:40.297366 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 1.97 seconds (1.97s).
+[0m10:43:40.298344 [debug] [MainThread]: Command end result
+[0m10:43:40.371021 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/miloszubac/nba_stats/target/manifest.json
+[0m10:43:40.372252 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/miloszubac/nba_stats/target/semantic_manifest.json
+[0m10:43:40.375252 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/miloszubac/nba_stats/target/run_results.json
+[0m10:43:40.375448 [info ] [MainThread]: 
+[0m10:43:40.375663 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m10:43:40.375819 [info ] [MainThread]: 
+[0m10:43:40.375986 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m10:43:40.377722 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 3.2803864, "process_in_blocks": "0", "process_kernel_time": 0.416763, "process_mem_max_rss": "201375744", "process_out_blocks": "0", "process_user_time": 3.500689}
+[0m10:43:40.378006 [debug] [MainThread]: Command `dbt run` succeeded at 10:43:40.377951 after 3.28 seconds
+[0m10:43:40.378217 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x146337ad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x146337ce0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x146337bf0>]}
+[0m10:43:40.378425 [debug] [MainThread]: Flushing usage events
+[0m10:43:40.618310 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:46:45.824078 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104b8cbf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106867d10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106867ad0>]}
+
+
+============================== 10:46:45.826888 | 66b53e2b-4f76-46b2-a62b-f57e81a40456 ==============================
+[0m10:46:45.826888 [info ] [MainThread]: Running with dbt=1.9.2
+[0m10:46:45.827242 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/Users/miloszubac/.dbt', 'log_path': '/Users/miloszubac/nba_stats/logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m10:46:46.656440 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '66b53e2b-4f76-46b2-a62b-f57e81a40456', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x127533980>]}
+[0m10:46:46.682724 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '66b53e2b-4f76-46b2-a62b-f57e81a40456', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104cb4230>]}
+[0m10:46:46.683396 [info ] [MainThread]: Registered adapter: snowflake=1.9.1
+[0m10:46:46.788730 [debug] [MainThread]: checksum: 12b12750b70de726cfd89136b8e24afc3f3e77597a97bff40ab7e5f9b39d5e18, vars: {}, profile: , target: , version: 1.9.2
+[0m10:46:46.846345 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m10:46:46.846655 [debug] [MainThread]: Partial parsing: added file: nba_stats://models/staging/stg_nba_stats.sql
+[0m10:46:46.953800 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.nba_stats.marts
+[0m10:46:46.959591 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '66b53e2b-4f76-46b2-a62b-f57e81a40456', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1279a0d70>]}
+[0m10:46:46.991441 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/miloszubac/nba_stats/target/manifest.json
+[0m10:46:46.992425 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/miloszubac/nba_stats/target/semantic_manifest.json
+[0m10:46:47.002401 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '66b53e2b-4f76-46b2-a62b-f57e81a40456', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x127add4c0>]}
+[0m10:46:47.002675 [info ] [MainThread]: Found 2 models, 2 sources, 472 macros
+[0m10:46:47.002855 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '66b53e2b-4f76-46b2-a62b-f57e81a40456', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x127ef3b00>]}
+[0m10:46:47.003678 [info ] [MainThread]: 
+[0m10:46:47.003870 [info ] [MainThread]: Concurrency: 10 threads (target='dev')
+[0m10:46:47.004013 [info ] [MainThread]: 
+[0m10:46:47.004251 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m10:46:47.006264 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_MASTER'
+[0m10:46:47.034787 [debug] [ThreadPool]: Using snowflake connection "list_MASTER"
+[0m10:46:47.035040 [debug] [ThreadPool]: On list_MASTER: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "connection_name": "list_MASTER"} */
+show terse schemas in database MASTER
+    limit 10000
+[0m10:46:47.035189 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:46:47.793704 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.758 seconds
+[0m10:46:47.796214 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_MASTER, now list_MASTER_STAGE)
+[0m10:46:47.802456 [debug] [ThreadPool]: Using snowflake connection "list_MASTER_STAGE"
+[0m10:46:47.802699 [debug] [ThreadPool]: On list_MASTER_STAGE: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "connection_name": "list_MASTER_STAGE"} */
+show objects in MASTER.STAGE limit 10000;
+[0m10:46:48.311059 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 0.508 seconds
+[0m10:46:48.317091 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '66b53e2b-4f76-46b2-a62b-f57e81a40456', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x127b31190>]}
+[0m10:46:48.320119 [debug] [Thread-1 (]: Began running node model.nba_stats.stg_nba_salaries
+[0m10:46:48.320690 [debug] [Thread-2 (]: Began running node model.nba_stats.stg_nba_stats
+[0m10:46:48.321471 [info ] [Thread-1 (]: 1 of 2 START sql view model STAGE.stg_nba_salaries ............................. [RUN]
+[0m10:46:48.322387 [info ] [Thread-2 (]: 2 of 2 START sql view model STAGE.stg_nba_stats ................................ [RUN]
+[0m10:46:48.323143 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_MASTER_STAGE, now model.nba_stats.stg_nba_salaries)
+[0m10:46:48.323838 [debug] [Thread-2 (]: Acquiring new snowflake connection 'model.nba_stats.stg_nba_stats'
+[0m10:46:48.324356 [debug] [Thread-1 (]: Began compiling node model.nba_stats.stg_nba_salaries
+[0m10:46:48.324836 [debug] [Thread-2 (]: Began compiling node model.nba_stats.stg_nba_stats
+[0m10:46:48.335019 [debug] [Thread-1 (]: Writing injected SQL for node "model.nba_stats.stg_nba_salaries"
+[0m10:46:48.338420 [debug] [Thread-2 (]: Writing injected SQL for node "model.nba_stats.stg_nba_stats"
+[0m10:46:48.339288 [debug] [Thread-1 (]: Began executing node model.nba_stats.stg_nba_salaries
+[0m10:46:48.339747 [debug] [Thread-2 (]: Began executing node model.nba_stats.stg_nba_stats
+[0m10:46:48.341972 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.stg_nba_salaries"
+[0m10:46:48.344010 [debug] [Thread-2 (]: Using snowflake connection "model.nba_stats.stg_nba_stats"
+[0m10:46:48.344433 [debug] [Thread-1 (]: On model.nba_stats.stg_nba_salaries: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_salaries"} */
+select current_warehouse() as warehouse
+[0m10:46:48.344840 [debug] [Thread-2 (]: On model.nba_stats.stg_nba_stats: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_stats"} */
+select current_warehouse() as warehouse
+[0m10:46:48.345927 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m10:46:48.424016 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.079 seconds
+[0m10:46:48.426778 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.stg_nba_salaries"
+[0m10:46:48.427141 [debug] [Thread-1 (]: On model.nba_stats.stg_nba_salaries: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_salaries"} */
+use warehouse compute_wh
+[0m10:46:48.546353 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.118 seconds
+[0m10:46:48.632575 [debug] [Thread-1 (]: Writing runtime sql for node "model.nba_stats.stg_nba_salaries"
+[0m10:46:48.634532 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.stg_nba_salaries"
+[0m10:46:48.634805 [debug] [Thread-1 (]: On model.nba_stats.stg_nba_salaries: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_salaries"} */
+create or replace   view MASTER.STAGE.stg_nba_salaries
+  
+   as (
+    select * from MASTER.STAGE.salaries
+  );
+[0m10:46:48.728341 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.382 seconds
+[0m10:46:48.729869 [debug] [Thread-2 (]: Using snowflake connection "model.nba_stats.stg_nba_stats"
+[0m10:46:48.730265 [debug] [Thread-2 (]: On model.nba_stats.stg_nba_stats: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_stats"} */
+use warehouse compute_wh
+[0m10:46:48.848957 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.118 seconds
+[0m10:46:48.852255 [debug] [Thread-2 (]: Writing runtime sql for node "model.nba_stats.stg_nba_stats"
+[0m10:46:48.853666 [debug] [Thread-2 (]: Using snowflake connection "model.nba_stats.stg_nba_stats"
+[0m10:46:48.854230 [debug] [Thread-2 (]: On model.nba_stats.stg_nba_stats: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_stats"} */
+create or replace   view MASTER.STAGE.stg_nba_stats
+  
+   as (
+    select * from MASTER.STAGE.nba_stats
+  );
+[0m10:46:49.073848 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.438 seconds
+[0m10:46:49.106470 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.stg_nba_salaries"
+[0m10:46:49.107050 [debug] [Thread-1 (]: On model.nba_stats.stg_nba_salaries: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_salaries"} */
+use warehouse COMPUTE_WH
+[0m10:46:49.180318 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.073 seconds
+[0m10:46:49.187080 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '66b53e2b-4f76-46b2-a62b-f57e81a40456', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105b82210>]}
+[0m10:46:49.188022 [info ] [Thread-1 (]: 1 of 2 OK created sql view model STAGE.stg_nba_salaries ........................ [[32mSUCCESS 1[0m in 0.86s]
+[0m10:46:49.188860 [debug] [Thread-1 (]: Finished running node model.nba_stats.stg_nba_salaries
+[0m10:46:49.677218 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.822 seconds
+[0m10:46:49.681738 [debug] [Thread-2 (]: Using snowflake connection "model.nba_stats.stg_nba_stats"
+[0m10:46:49.682354 [debug] [Thread-2 (]: On model.nba_stats.stg_nba_stats: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_stats"} */
+use warehouse COMPUTE_WH
+[0m10:46:49.813160 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.130 seconds
+[0m10:46:49.819081 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '66b53e2b-4f76-46b2-a62b-f57e81a40456', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x127f137d0>]}
+[0m10:46:49.820729 [info ] [Thread-2 (]: 2 of 2 OK created sql view model STAGE.stg_nba_stats ........................... [[32mSUCCESS 1[0m in 1.49s]
+[0m10:46:49.821754 [debug] [Thread-2 (]: Finished running node model.nba_stats.stg_nba_stats
+[0m10:46:49.824498 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:46:49.825344 [debug] [MainThread]: Connection 'model.nba_stats.stg_nba_salaries' was left open.
+[0m10:46:49.825842 [debug] [MainThread]: On model.nba_stats.stg_nba_salaries: Close
+[0m10:46:49.951693 [debug] [MainThread]: Connection 'model.nba_stats.stg_nba_stats' was left open.
+[0m10:46:49.953110 [debug] [MainThread]: On model.nba_stats.stg_nba_stats: Close
+[0m10:46:50.126439 [info ] [MainThread]: 
+[0m10:46:50.127667 [info ] [MainThread]: Finished running 2 view models in 0 hours 0 minutes and 3.12 seconds (3.12s).
+[0m10:46:50.129009 [debug] [MainThread]: Command end result
+[0m10:46:50.155400 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/miloszubac/nba_stats/target/manifest.json
+[0m10:46:50.157131 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/miloszubac/nba_stats/target/semantic_manifest.json
+[0m10:46:50.162323 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/miloszubac/nba_stats/target/run_results.json
+[0m10:46:50.162637 [info ] [MainThread]: 
+[0m10:46:50.162972 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m10:46:50.163221 [info ] [MainThread]: 
+[0m10:46:50.163481 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m10:46:50.165998 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 4.377671, "process_in_blocks": "0", "process_kernel_time": 0.432065, "process_mem_max_rss": "195149824", "process_out_blocks": "0", "process_user_time": 3.591708}
+[0m10:46:50.166434 [debug] [MainThread]: Command `dbt run` succeeded at 10:46:50.166351 after 4.38 seconds
+[0m10:46:50.166774 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x127b96cf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105bb0d40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1276d9430>]}
+[0m10:46:50.167096 [debug] [MainThread]: Flushing usage events
+[0m10:46:50.403801 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:27:19.653561 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104b1eea0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10274c620>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10500fb90>]}
+
+
+============================== 13:27:19.656986 | 9a7b8689-dd9c-4f76-8b11-da69a764c571 ==============================
+[0m13:27:19.656986 [info ] [MainThread]: Running with dbt=1.9.2
+[0m13:27:19.657321 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/miloszubac/.dbt', 'debug': 'False', 'version_check': 'True', 'log_path': '/Users/miloszubac/nba_stats/logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt run -s Factplayer', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m13:27:20.537113 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '9a7b8689-dd9c-4f76-8b11-da69a764c571', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11a54a780>]}
+[0m13:27:20.563190 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '9a7b8689-dd9c-4f76-8b11-da69a764c571', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x138049520>]}
+[0m13:27:20.563869 [info ] [MainThread]: Registered adapter: snowflake=1.9.1
+[0m13:27:20.668649 [debug] [MainThread]: checksum: 12b12750b70de726cfd89136b8e24afc3f3e77597a97bff40ab7e5f9b39d5e18, vars: {}, profile: , target: , version: 1.9.2
+[0m13:27:20.724040 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m13:27:20.724361 [debug] [MainThread]: Partial parsing: added file: nba_stats://models/marts/FactPlayer.sql
+[0m13:27:20.838335 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '9a7b8689-dd9c-4f76-8b11-da69a764c571', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1385fb260>]}
+[0m13:27:20.868857 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/miloszubac/nba_stats/target/manifest.json
+[0m13:27:20.870234 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/miloszubac/nba_stats/target/semantic_manifest.json
+[0m13:27:20.880529 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '9a7b8689-dd9c-4f76-8b11-da69a764c571', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1385d1310>]}
+[0m13:27:20.880805 [info ] [MainThread]: Found 3 models, 2 sources, 472 macros
+[0m13:27:20.880983 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9a7b8689-dd9c-4f76-8b11-da69a764c571', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1381e3b00>]}
+[0m13:27:20.881279 [warn ] [MainThread]: The selection criterion 'Factplayer' does not match any enabled nodes
+[0m13:27:20.881810 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m13:27:20.882064 [debug] [MainThread]: Command end result
+[0m13:27:20.892171 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/miloszubac/nba_stats/target/manifest.json
+[0m13:27:20.893040 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/miloszubac/nba_stats/target/semantic_manifest.json
+[0m13:27:20.894765 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/miloszubac/nba_stats/target/run_results.json
+[0m13:27:20.896299 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.2814504, "process_in_blocks": "0", "process_kernel_time": 0.34697, "process_mem_max_rss": "192987136", "process_out_blocks": "0", "process_user_time": 3.213948}
+[0m13:27:20.896526 [debug] [MainThread]: Command `dbt run` succeeded at 13:27:20.896482 after 1.28 seconds
+[0m13:27:20.896717 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10500fd40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104e7a720>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10435cda0>]}
+[0m13:27:20.896886 [debug] [MainThread]: Flushing usage events
+[0m13:27:21.079422 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:27:45.668127 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1082fa7e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108823e60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108823bf0>]}
+
+
+============================== 13:27:45.670902 | 173d5b81-0a51-45bc-8e2e-ae2cfd29ab12 ==============================
+[0m13:27:45.670902 [info ] [MainThread]: Running with dbt=1.9.2
+[0m13:27:45.671234 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': '/Users/miloszubac/nba_stats/logs', 'profiles_dir': '/Users/miloszubac/.dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt run -s FactPlayer', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m13:27:46.453232 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '173d5b81-0a51-45bc-8e2e-ae2cfd29ab12', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12fc2c3b0>]}
+[0m13:27:46.479334 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '173d5b81-0a51-45bc-8e2e-ae2cfd29ab12', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1086e6150>]}
+[0m13:27:46.479925 [info ] [MainThread]: Registered adapter: snowflake=1.9.1
+[0m13:27:46.587077 [debug] [MainThread]: checksum: 12b12750b70de726cfd89136b8e24afc3f3e77597a97bff40ab7e5f9b39d5e18, vars: {}, profile: , target: , version: 1.9.2
+[0m13:27:46.639908 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m13:27:46.640137 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m13:27:46.655044 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '173d5b81-0a51-45bc-8e2e-ae2cfd29ab12', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14b64f3e0>]}
+[0m13:27:46.686778 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/miloszubac/nba_stats/target/manifest.json
+[0m13:27:46.687711 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/miloszubac/nba_stats/target/semantic_manifest.json
+[0m13:27:46.696961 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '173d5b81-0a51-45bc-8e2e-ae2cfd29ab12', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14b9bcd10>]}
+[0m13:27:46.697220 [info ] [MainThread]: Found 3 models, 2 sources, 472 macros
+[0m13:27:46.697397 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '173d5b81-0a51-45bc-8e2e-ae2cfd29ab12', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14b613fb0>]}
+[0m13:27:46.698105 [info ] [MainThread]: 
+[0m13:27:46.698293 [info ] [MainThread]: Concurrency: 10 threads (target='dev')
+[0m13:27:46.698435 [info ] [MainThread]: 
+[0m13:27:46.698682 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m13:27:46.699099 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_MASTER'
+[0m13:27:46.729673 [debug] [ThreadPool]: Using snowflake connection "list_MASTER"
+[0m13:27:46.729947 [debug] [ThreadPool]: On list_MASTER: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "connection_name": "list_MASTER"} */
+show terse schemas in database MASTER
+    limit 10000
+[0m13:27:46.730110 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:27:47.545044 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.815 seconds
+[0m13:27:47.551832 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_MASTER, now list_MASTER_STAGE)
+[0m13:27:47.565473 [debug] [ThreadPool]: Using snowflake connection "list_MASTER_STAGE"
+[0m13:27:47.565964 [debug] [ThreadPool]: On list_MASTER_STAGE: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "connection_name": "list_MASTER_STAGE"} */
+show objects in MASTER.STAGE limit 10000;
+[0m13:27:47.987755 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.421 seconds
+[0m13:27:47.992247 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '173d5b81-0a51-45bc-8e2e-ae2cfd29ab12', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14b5329f0>]}
+[0m13:27:47.995109 [debug] [Thread-1 (]: Began running node model.nba_stats.FactPlayer
+[0m13:27:47.996053 [info ] [Thread-1 (]: 1 of 1 START sql table model STAGE.FactPlayer .................................. [RUN]
+[0m13:27:47.996746 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_MASTER_STAGE, now model.nba_stats.FactPlayer)
+[0m13:27:47.997259 [debug] [Thread-1 (]: Began compiling node model.nba_stats.FactPlayer
+[0m13:27:48.008572 [debug] [Thread-1 (]: Writing injected SQL for node "model.nba_stats.FactPlayer"
+[0m13:27:48.009541 [debug] [Thread-1 (]: Began executing node model.nba_stats.FactPlayer
+[0m13:27:48.011908 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.FactPlayer"
+[0m13:27:48.012332 [debug] [Thread-1 (]: On model.nba_stats.FactPlayer: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.FactPlayer"} */
+select current_warehouse() as warehouse
+[0m13:27:48.110538 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.098 seconds
+[0m13:27:48.113501 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.FactPlayer"
+[0m13:27:48.114089 [debug] [Thread-1 (]: On model.nba_stats.FactPlayer: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.FactPlayer"} */
+use warehouse compute_wh
+[0m13:27:48.360266 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.245 seconds
+[0m13:27:48.386626 [debug] [Thread-1 (]: Writing runtime sql for node "model.nba_stats.FactPlayer"
+[0m13:27:48.388009 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.FactPlayer"
+[0m13:27:48.388259 [debug] [Thread-1 (]: On model.nba_stats.FactPlayer: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.FactPlayer"} */
+create or replace transient table MASTER.STAGE.FactPlayer
+         as
+        (with stats as (
+	select player,
+	age,
+	CASE 
+        WHEN COUNT(DISTINCT team) OVER (PARTITION BY player, year) > 1 THEN '2TM'
+        ELSE team
+    END AS team,
+	pos,
+	round(mp/gp,1) as mpg,
+	round(pts/gp,1) as ppg,
+	round(trb/gp,1) as rpg,
+	round(ast/gp,1) as apg,
+	round(stl/gp,1) as spg,
+	round(blk/gp,1) as bpg,
+	round(tov/gp,1) as topg,
+	fg%,
+	3p%,
+	ft%
+	from MASTER.STAGE.nba_stats
+	where year = year(current_date)
+	QUALIFY ROW_NUMBER() OVER (PARTITION BY player, year ORDER BY team) = 1
+),
+salaries as (
+	select player,
+	CAST(replace(replace("2024-25",'$',''),',','') AS FLOAT) as salary,
+	from MASTER.STAGE.salaries
+	where player is not null
+	QUALIFY ROW_NUMBER() OVER (PARTITION BY player ORDER BY "2024-25") = 1
+)
+
+select
+	stats.player,
+	stats.age,
+	stats.team,
+	stats.pos,
+	stats.mpg,
+	stats.ppg,
+	stats.rpg,
+	stats.apg,
+	stats.spg,
+	stats.bpg,
+	stats.topg,
+	stats.fg%,
+	stats.3p%,
+	stats.ft%,
+	salaries.salary
+from stats
+left join salaries
+on stats.player = salaries.player
+        );
+[0m13:27:48.523652 [debug] [Thread-1 (]: Snowflake adapter: Snowflake query id: 01bb66f7-0001-6c9d-0002-b402000200a2
+[0m13:27:48.524114 [debug] [Thread-1 (]: Snowflake adapter: Snowflake error: 001003 (42000): SQL compilation error:
+syntax error line 18 at position 4 unexpected ','.
+syntax error line 19 at position 3 unexpected '%'.
+syntax error line 20 at position 3 unexpected '%'.
+syntax error line 22 at position 19 unexpected 'current_date'.
+syntax error line 23 at position 1 unexpected 'QUALIFY'.
+syntax error line 23 at position 67 unexpected ')'.
+[0m13:27:48.524542 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.FactPlayer"
+[0m13:27:48.524782 [debug] [Thread-1 (]: On model.nba_stats.FactPlayer: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.FactPlayer"} */
+use warehouse COMPUTE_WH
+[0m13:27:48.633004 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.107 seconds
+[0m13:27:48.643695 [debug] [Thread-1 (]: Database Error in model FactPlayer (models/marts/FactPlayer.sql)
+  001003 (42000): SQL compilation error:
+  syntax error line 18 at position 4 unexpected ','.
+  syntax error line 19 at position 3 unexpected '%'.
+  syntax error line 20 at position 3 unexpected '%'.
+  syntax error line 22 at position 19 unexpected 'current_date'.
+  syntax error line 23 at position 1 unexpected 'QUALIFY'.
+  syntax error line 23 at position 67 unexpected ')'.
+  compiled code at target/run/nba_stats/models/marts/FactPlayer.sql
+[0m13:27:48.646599 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '173d5b81-0a51-45bc-8e2e-ae2cfd29ab12', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107b3a1b0>]}
+[0m13:27:48.647636 [error] [Thread-1 (]: 1 of 1 ERROR creating sql table model STAGE.FactPlayer ......................... [[31mERROR[0m in 0.65s]
+[0m13:27:48.648522 [debug] [Thread-1 (]: Finished running node model.nba_stats.FactPlayer
+[0m13:27:48.649246 [debug] [Thread-13 ]: Marking all children of 'model.nba_stats.FactPlayer' to be skipped because of status 'error'.  Reason: Database Error in model FactPlayer (models/marts/FactPlayer.sql)
+  001003 (42000): SQL compilation error:
+  syntax error line 18 at position 4 unexpected ','.
+  syntax error line 19 at position 3 unexpected '%'.
+  syntax error line 20 at position 3 unexpected '%'.
+  syntax error line 22 at position 19 unexpected 'current_date'.
+  syntax error line 23 at position 1 unexpected 'QUALIFY'.
+  syntax error line 23 at position 67 unexpected ')'.
+  compiled code at target/run/nba_stats/models/marts/FactPlayer.sql.
+[0m13:27:48.651997 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:27:48.652404 [debug] [MainThread]: Connection 'model.nba_stats.FactPlayer' was left open.
+[0m13:27:48.652783 [debug] [MainThread]: On model.nba_stats.FactPlayer: Close
+[0m13:27:48.822090 [info ] [MainThread]: 
+[0m13:27:48.822980 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 2.12 seconds (2.12s).
+[0m13:27:48.824003 [debug] [MainThread]: Command end result
+[0m13:27:48.850533 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/miloszubac/nba_stats/target/manifest.json
+[0m13:27:48.852468 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/miloszubac/nba_stats/target/semantic_manifest.json
+[0m13:27:48.857681 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/miloszubac/nba_stats/target/run_results.json
+[0m13:27:48.858028 [info ] [MainThread]: 
+[0m13:27:48.858384 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m13:27:48.858647 [info ] [MainThread]: 
+[0m13:27:48.858971 [error] [MainThread]:   Database Error in model FactPlayer (models/marts/FactPlayer.sql)
+  001003 (42000): SQL compilation error:
+  syntax error line 18 at position 4 unexpected ','.
+  syntax error line 19 at position 3 unexpected '%'.
+  syntax error line 20 at position 3 unexpected '%'.
+  syntax error line 22 at position 19 unexpected 'current_date'.
+  syntax error line 23 at position 1 unexpected 'QUALIFY'.
+  syntax error line 23 at position 67 unexpected ')'.
+  compiled code at target/run/nba_stats/models/marts/FactPlayer.sql
+[0m13:27:48.859236 [info ] [MainThread]: 
+[0m13:27:48.859498 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m13:27:48.861657 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 3.2259867, "process_in_blocks": "0", "process_kernel_time": 0.387635, "process_mem_max_rss": "200622080", "process_out_blocks": "0", "process_user_time": 3.396052}
+[0m13:27:48.862048 [debug] [MainThread]: Command `dbt run` failed at 13:27:48.861973 after 3.23 seconds
+[0m13:27:48.862367 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107cd8b60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14b5f1d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1086e44a0>]}
+[0m13:27:48.862671 [debug] [MainThread]: Flushing usage events
+[0m13:27:49.040434 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:30:56.936349 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10663d3a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106b2ff20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106b2fcb0>]}
+
+
+============================== 13:30:56.939515 | 7c5d76ec-1187-482a-8ca3-c564415cd0c3 ==============================
+[0m13:30:56.939515 [info ] [MainThread]: Running with dbt=1.9.2
+[0m13:30:56.939885 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/miloszubac/.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/Users/miloszubac/nba_stats/logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt run -s FactPlayer', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m13:30:57.789957 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '7c5d76ec-1187-482a-8ca3-c564415cd0c3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107da3d40>]}
+[0m13:30:57.816503 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '7c5d76ec-1187-482a-8ca3-c564415cd0c3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x130d50740>]}
+[0m13:30:57.817145 [info ] [MainThread]: Registered adapter: snowflake=1.9.1
+[0m13:30:57.921343 [debug] [MainThread]: checksum: 12b12750b70de726cfd89136b8e24afc3f3e77597a97bff40ab7e5f9b39d5e18, vars: {}, profile: , target: , version: 1.9.2
+[0m13:30:57.978725 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m13:30:57.979094 [debug] [MainThread]: Partial parsing: updated file: nba_stats://models/marts/FactPlayer.sql
+[0m13:30:58.094697 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '7c5d76ec-1187-482a-8ca3-c564415cd0c3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1321f3290>]}
+[0m13:30:58.125038 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/miloszubac/nba_stats/target/manifest.json
+[0m13:30:58.126362 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/miloszubac/nba_stats/target/semantic_manifest.json
+[0m13:30:58.137347 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '7c5d76ec-1187-482a-8ca3-c564415cd0c3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1321d1640>]}
+[0m13:30:58.137625 [info ] [MainThread]: Found 3 models, 2 sources, 472 macros
+[0m13:30:58.137807 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7c5d76ec-1187-482a-8ca3-c564415cd0c3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1320d35f0>]}
+[0m13:30:58.138520 [info ] [MainThread]: 
+[0m13:30:58.138694 [info ] [MainThread]: Concurrency: 10 threads (target='dev')
+[0m13:30:58.138831 [info ] [MainThread]: 
+[0m13:30:58.139070 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m13:30:58.139468 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_MASTER'
+[0m13:30:58.168120 [debug] [ThreadPool]: Using snowflake connection "list_MASTER"
+[0m13:30:58.168413 [debug] [ThreadPool]: On list_MASTER: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "connection_name": "list_MASTER"} */
+show terse schemas in database MASTER
+    limit 10000
+[0m13:30:58.168578 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:30:58.819082 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.650 seconds
+[0m13:30:58.827814 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_MASTER, now list_MASTER_STAGE)
+[0m13:30:58.840954 [debug] [ThreadPool]: Using snowflake connection "list_MASTER_STAGE"
+[0m13:30:58.841372 [debug] [ThreadPool]: On list_MASTER_STAGE: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "connection_name": "list_MASTER_STAGE"} */
+show objects in MASTER.STAGE limit 10000;
+[0m13:30:59.068716 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.227 seconds
+[0m13:30:59.073151 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7c5d76ec-1187-482a-8ca3-c564415cd0c3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1320d27e0>]}
+[0m13:30:59.076248 [debug] [Thread-1 (]: Began running node model.nba_stats.FactPlayer
+[0m13:30:59.077048 [info ] [Thread-1 (]: 1 of 1 START sql table model STAGE.FactPlayer .................................. [RUN]
+[0m13:30:59.077652 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_MASTER_STAGE, now model.nba_stats.FactPlayer)
+[0m13:30:59.078065 [debug] [Thread-1 (]: Began compiling node model.nba_stats.FactPlayer
+[0m13:30:59.087750 [debug] [Thread-1 (]: Writing injected SQL for node "model.nba_stats.FactPlayer"
+[0m13:30:59.089431 [debug] [Thread-1 (]: Began executing node model.nba_stats.FactPlayer
+[0m13:30:59.092050 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.FactPlayer"
+[0m13:30:59.092572 [debug] [Thread-1 (]: On model.nba_stats.FactPlayer: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.FactPlayer"} */
+select current_warehouse() as warehouse
+[0m13:30:59.167736 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.074 seconds
+[0m13:30:59.171051 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.FactPlayer"
+[0m13:30:59.171813 [debug] [Thread-1 (]: On model.nba_stats.FactPlayer: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.FactPlayer"} */
+use warehouse compute_wh
+[0m13:30:59.280632 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.108 seconds
+[0m13:30:59.318844 [debug] [Thread-1 (]: Writing runtime sql for node "model.nba_stats.FactPlayer"
+[0m13:30:59.320973 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.FactPlayer"
+[0m13:30:59.321376 [debug] [Thread-1 (]: On model.nba_stats.FactPlayer: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.FactPlayer"} */
+create or replace transient table MASTER.STAGE.FactPlayer
+         as
+        (with stats as (
+	select player,
+	age,
+	CASE 
+        WHEN COUNT(DISTINCT team) OVER (PARTITION BY player, year) > 1 THEN '2TM'
+        ELSE team
+    END AS team,
+	pos,
+	round(mp/g,1) as mpg,
+	round(pts/g,1) as ppg,
+	round(trb/g,1) as rpg,
+	round(ast/g,1) as apg,
+	round(stl/g,1) as spg,
+	round(blk/g,1) as bpg,
+	round(tov/g,1) as topg,
+	"FG%",
+	"3P%",
+	"FT%"
+	from MASTER.STAGE.nba_stats
+	where year = year(current_date)
+	QUALIFY ROW_NUMBER() OVER (PARTITION BY player, year ORDER BY team) = 1
+),
+salaries as (
+	select player,
+	CAST(replace(replace("2024-25",'$',''),',','') AS FLOAT) as salary,
+	from MASTER.STAGE.salaries
+	where player is not null
+	QUALIFY ROW_NUMBER() OVER (PARTITION BY player ORDER BY "2024-25") = 1
+)
+
+select
+	stats.player,
+	stats.age,
+	stats.team,
+	stats.pos,
+	stats.mpg,
+	stats.ppg,
+	stats.rpg,
+	stats.apg,
+	stats.spg,
+	stats.bpg,
+	stats.topg,
+	stats.fg%,
+	stats.3p%,
+	stats.ft%,
+	salaries.salary
+from stats
+left join salaries
+on stats.player = salaries.player
+        );
+[0m13:30:59.410848 [debug] [Thread-1 (]: Snowflake adapter: Snowflake query id: 01bb66fa-0001-6ca9-0002-b4020001f0ba
+[0m13:30:59.411680 [debug] [Thread-1 (]: Snowflake adapter: Snowflake error: 001003 (42000): SQL compilation error:
+syntax error line 45 at position 10 unexpected ','.
+syntax error line 46 at position 6 unexpected '.3'.
+syntax error line 47 at position 10 unexpected ','.
+[0m13:30:59.412472 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.FactPlayer"
+[0m13:30:59.412985 [debug] [Thread-1 (]: On model.nba_stats.FactPlayer: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.FactPlayer"} */
+use warehouse COMPUTE_WH
+[0m13:30:59.592984 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.179 seconds
+[0m13:30:59.602724 [debug] [Thread-1 (]: Database Error in model FactPlayer (models/marts/FactPlayer.sql)
+  001003 (42000): SQL compilation error:
+  syntax error line 45 at position 10 unexpected ','.
+  syntax error line 46 at position 6 unexpected '.3'.
+  syntax error line 47 at position 10 unexpected ','.
+  compiled code at target/run/nba_stats/models/marts/FactPlayer.sql
+[0m13:30:59.605559 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7c5d76ec-1187-482a-8ca3-c564415cd0c3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1324e54f0>]}
+[0m13:30:59.606534 [error] [Thread-1 (]: 1 of 1 ERROR creating sql table model STAGE.FactPlayer ......................... [[31mERROR[0m in 0.53s]
+[0m13:30:59.607515 [debug] [Thread-1 (]: Finished running node model.nba_stats.FactPlayer
+[0m13:30:59.608276 [debug] [Thread-13 ]: Marking all children of 'model.nba_stats.FactPlayer' to be skipped because of status 'error'.  Reason: Database Error in model FactPlayer (models/marts/FactPlayer.sql)
+  001003 (42000): SQL compilation error:
+  syntax error line 45 at position 10 unexpected ','.
+  syntax error line 46 at position 6 unexpected '.3'.
+  syntax error line 47 at position 10 unexpected ','.
+  compiled code at target/run/nba_stats/models/marts/FactPlayer.sql.
+[0m13:30:59.610618 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:30:59.610996 [debug] [MainThread]: Connection 'model.nba_stats.FactPlayer' was left open.
+[0m13:30:59.611340 [debug] [MainThread]: On model.nba_stats.FactPlayer: Close
+[0m13:30:59.701687 [info ] [MainThread]: 
+[0m13:30:59.702638 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 1.56 seconds (1.56s).
+[0m13:30:59.703792 [debug] [MainThread]: Command end result
+[0m13:30:59.779836 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/miloszubac/nba_stats/target/manifest.json
+[0m13:30:59.780846 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/miloszubac/nba_stats/target/semantic_manifest.json
+[0m13:30:59.784206 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/miloszubac/nba_stats/target/run_results.json
+[0m13:30:59.784416 [info ] [MainThread]: 
+[0m13:30:59.784634 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m13:30:59.784804 [info ] [MainThread]: 
+[0m13:30:59.784999 [error] [MainThread]:   Database Error in model FactPlayer (models/marts/FactPlayer.sql)
+  001003 (42000): SQL compilation error:
+  syntax error line 45 at position 10 unexpected ','.
+  syntax error line 46 at position 6 unexpected '.3'.
+  syntax error line 47 at position 10 unexpected ','.
+  compiled code at target/run/nba_stats/models/marts/FactPlayer.sql
+[0m13:30:59.785159 [info ] [MainThread]: 
+[0m13:30:59.785331 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m13:30:59.787079 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 2.8887935, "process_in_blocks": "0", "process_kernel_time": 0.393906, "process_mem_max_rss": "202702848", "process_out_blocks": "0", "process_user_time": 3.470974}
+[0m13:30:59.787302 [debug] [MainThread]: Command `dbt run` failed at 13:30:59.787258 after 2.89 seconds
+[0m13:30:59.787502 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1322054f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x132205460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x132205250>]}
+[0m13:30:59.787692 [debug] [MainThread]: Flushing usage events
+[0m13:31:00.115875 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:32:03.488143 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10310a900>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107a5bdd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107a5bb90>]}
+
+
+============================== 13:32:03.492459 | 897b89ba-d564-45e3-bc65-e3ac3dd367b8 ==============================
+[0m13:32:03.492459 [info ] [MainThread]: Running with dbt=1.9.2
+[0m13:32:03.492940 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/miloszubac/.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/Users/miloszubac/nba_stats/logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt run -s FactPlayer', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m13:32:04.397861 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '897b89ba-d564-45e3-bc65-e3ac3dd367b8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11f0f04a0>]}
+[0m13:32:04.428996 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '897b89ba-d564-45e3-bc65-e3ac3dd367b8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109913950>]}
+[0m13:32:04.429833 [info ] [MainThread]: Registered adapter: snowflake=1.9.1
+[0m13:32:04.543639 [debug] [MainThread]: checksum: 12b12750b70de726cfd89136b8e24afc3f3e77597a97bff40ab7e5f9b39d5e18, vars: {}, profile: , target: , version: 1.9.2
+[0m13:32:04.601471 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m13:32:04.601842 [debug] [MainThread]: Partial parsing: updated file: nba_stats://models/marts/FactPlayer.sql
+[0m13:32:04.718144 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '897b89ba-d564-45e3-bc65-e3ac3dd367b8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12e5f6f60>]}
+[0m13:32:04.749145 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/miloszubac/nba_stats/target/manifest.json
+[0m13:32:04.750194 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/miloszubac/nba_stats/target/semantic_manifest.json
+[0m13:32:04.760692 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '897b89ba-d564-45e3-bc65-e3ac3dd367b8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12e232720>]}
+[0m13:32:04.760998 [info ] [MainThread]: Found 3 models, 2 sources, 472 macros
+[0m13:32:04.761180 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '897b89ba-d564-45e3-bc65-e3ac3dd367b8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12e63c530>]}
+[0m13:32:04.762014 [info ] [MainThread]: 
+[0m13:32:04.762263 [info ] [MainThread]: Concurrency: 10 threads (target='dev')
+[0m13:32:04.762424 [info ] [MainThread]: 
+[0m13:32:04.762682 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m13:32:04.763121 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_MASTER'
+[0m13:32:04.790933 [debug] [ThreadPool]: Using snowflake connection "list_MASTER"
+[0m13:32:04.791201 [debug] [ThreadPool]: On list_MASTER: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "connection_name": "list_MASTER"} */
+show terse schemas in database MASTER
+    limit 10000
+[0m13:32:04.791363 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:32:05.586266 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.795 seconds
+[0m13:32:05.595175 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_MASTER, now list_MASTER_STAGE)
+[0m13:32:05.607966 [debug] [ThreadPool]: Using snowflake connection "list_MASTER_STAGE"
+[0m13:32:05.608397 [debug] [ThreadPool]: On list_MASTER_STAGE: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "connection_name": "list_MASTER_STAGE"} */
+show objects in MASTER.STAGE limit 10000;
+[0m13:32:05.776459 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.168 seconds
+[0m13:32:05.782203 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '897b89ba-d564-45e3-bc65-e3ac3dd367b8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12e5d0f20>]}
+[0m13:32:05.784956 [debug] [Thread-1 (]: Began running node model.nba_stats.FactPlayer
+[0m13:32:05.785802 [info ] [Thread-1 (]: 1 of 1 START sql table model STAGE.FactPlayer .................................. [RUN]
+[0m13:32:05.786451 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_MASTER_STAGE, now model.nba_stats.FactPlayer)
+[0m13:32:05.786947 [debug] [Thread-1 (]: Began compiling node model.nba_stats.FactPlayer
+[0m13:32:05.797634 [debug] [Thread-1 (]: Writing injected SQL for node "model.nba_stats.FactPlayer"
+[0m13:32:05.798607 [debug] [Thread-1 (]: Began executing node model.nba_stats.FactPlayer
+[0m13:32:05.802033 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.FactPlayer"
+[0m13:32:05.802671 [debug] [Thread-1 (]: On model.nba_stats.FactPlayer: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.FactPlayer"} */
+select current_warehouse() as warehouse
+[0m13:32:06.017476 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.214 seconds
+[0m13:32:06.020000 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.FactPlayer"
+[0m13:32:06.020578 [debug] [Thread-1 (]: On model.nba_stats.FactPlayer: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.FactPlayer"} */
+use warehouse compute_wh
+[0m13:32:06.110662 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.090 seconds
+[0m13:32:06.131689 [debug] [Thread-1 (]: Writing runtime sql for node "model.nba_stats.FactPlayer"
+[0m13:32:06.132950 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.FactPlayer"
+[0m13:32:06.133221 [debug] [Thread-1 (]: On model.nba_stats.FactPlayer: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.FactPlayer"} */
+create or replace transient table MASTER.STAGE.FactPlayer
+         as
+        (with stats as (
+	select player,
+	age,
+	CASE 
+        WHEN COUNT(DISTINCT team) OVER (PARTITION BY player, year) > 1 THEN '2TM'
+        ELSE team
+    END AS team,
+	pos,
+	round(mp/g,1) as mpg,
+	round(pts/g,1) as ppg,
+	round(trb/g,1) as rpg,
+	round(ast/g,1) as apg,
+	round(stl/g,1) as spg,
+	round(blk/g,1) as bpg,
+	round(tov/g,1) as topg,
+	"FG%",
+	"3P%",
+	"FT%"
+	from MASTER.STAGE.nba_stats
+	where year = year(current_date)
+	QUALIFY ROW_NUMBER() OVER (PARTITION BY player, year ORDER BY team) = 1
+),
+salaries as (
+	select player,
+	CAST(replace(replace("2024-25",'$',''),',','') AS FLOAT) as salary,
+	from MASTER.STAGE.salaries
+	where player is not null
+	QUALIFY ROW_NUMBER() OVER (PARTITION BY player ORDER BY "2024-25") = 1
+)
+
+select
+	stats.player,
+	stats.age,
+	stats.team,
+	stats.pos,
+	stats.mpg,
+	stats.ppg,
+	stats.rpg,
+	stats.apg,
+	stats.spg,
+	stats.bpg,
+	stats.topg,
+	stats."FG%",
+	stats."3P%",
+	stats."FT%",
+	salaries.salary
+from stats
+left join salaries
+on stats.player = salaries.player
+        );
+[0m13:32:07.520445 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.387 seconds
+[0m13:32:07.548814 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.FactPlayer"
+[0m13:32:07.549422 [debug] [Thread-1 (]: On model.nba_stats.FactPlayer: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.FactPlayer"} */
+use warehouse COMPUTE_WH
+[0m13:32:07.636183 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.086 seconds
+[0m13:32:07.646240 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '897b89ba-d564-45e3-bc65-e3ac3dd367b8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10339f1a0>]}
+[0m13:32:07.647420 [info ] [Thread-1 (]: 1 of 1 OK created sql table model STAGE.FactPlayer ............................. [[32mSUCCESS 1[0m in 1.86s]
+[0m13:32:07.648298 [debug] [Thread-1 (]: Finished running node model.nba_stats.FactPlayer
+[0m13:32:07.650305 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:32:07.650764 [debug] [MainThread]: Connection 'model.nba_stats.FactPlayer' was left open.
+[0m13:32:07.651174 [debug] [MainThread]: On model.nba_stats.FactPlayer: Close
+[0m13:32:07.766907 [info ] [MainThread]: 
+[0m13:32:07.767664 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 3.00 seconds (3.00s).
+[0m13:32:07.768688 [debug] [MainThread]: Command end result
+[0m13:32:07.844263 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/miloszubac/nba_stats/target/manifest.json
+[0m13:32:07.845482 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/miloszubac/nba_stats/target/semantic_manifest.json
+[0m13:32:07.848757 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/miloszubac/nba_stats/target/run_results.json
+[0m13:32:07.849037 [info ] [MainThread]: 
+[0m13:32:07.849285 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m13:32:07.849458 [info ] [MainThread]: 
+[0m13:32:07.849631 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m13:32:07.851325 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 4.429963, "process_in_blocks": "0", "process_kernel_time": 0.4427, "process_mem_max_rss": "200294400", "process_out_blocks": "0", "process_user_time": 3.536068}
+[0m13:32:07.851600 [debug] [MainThread]: Command `dbt run` succeeded at 13:32:07.851549 after 4.43 seconds
+[0m13:32:07.851820 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1066bbe90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1099383b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10310a900>]}
+[0m13:32:07.852024 [debug] [MainThread]: Flushing usage events
+[0m13:32:08.078767 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:59:02.448837 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1075a03e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113157ef0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113157a70>]}
+
+
+============================== 13:59:02.451996 | 8cc93f68-6dcf-4e9c-9b94-a1ae2f93a5f4 ==============================
+[0m13:59:02.451996 [info ] [MainThread]: Running with dbt=1.9.2
+[0m13:59:02.452347 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/miloszubac/.dbt', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/Users/miloszubac/nba_stats/logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt run --project-dir /Users/miloszubac/nba_stats', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m13:59:03.942999 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '8cc93f68-6dcf-4e9c-9b94-a1ae2f93a5f4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x127e68530>]}
+[0m13:59:03.986613 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '8cc93f68-6dcf-4e9c-9b94-a1ae2f93a5f4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111a452b0>]}
+[0m13:59:03.988709 [info ] [MainThread]: Registered adapter: snowflake=1.9.1
+[0m13:59:04.114736 [debug] [MainThread]: checksum: 12b12750b70de726cfd89136b8e24afc3f3e77597a97bff40ab7e5f9b39d5e18, vars: {}, profile: , target: , version: 1.9.2
+[0m13:59:04.178540 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m13:59:04.178855 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m13:59:04.194815 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '8cc93f68-6dcf-4e9c-9b94-a1ae2f93a5f4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1460a25a0>]}
+[0m13:59:04.227577 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/miloszubac/nba_stats/target/manifest.json
+[0m13:59:04.231379 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/miloszubac/nba_stats/target/semantic_manifest.json
+[0m13:59:04.241384 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '8cc93f68-6dcf-4e9c-9b94-a1ae2f93a5f4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1463bd100>]}
+[0m13:59:04.241643 [info ] [MainThread]: Found 3 models, 2 sources, 472 macros
+[0m13:59:04.241831 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8cc93f68-6dcf-4e9c-9b94-a1ae2f93a5f4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1462cba70>]}
+[0m13:59:04.242771 [info ] [MainThread]: 
+[0m13:59:04.242960 [info ] [MainThread]: Concurrency: 10 threads (target='dev')
+[0m13:59:04.243105 [info ] [MainThread]: 
+[0m13:59:04.243364 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m13:59:04.245465 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_MASTER'
+[0m13:59:04.282065 [debug] [ThreadPool]: Using snowflake connection "list_MASTER"
+[0m13:59:04.282402 [debug] [ThreadPool]: On list_MASTER: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "connection_name": "list_MASTER"} */
+show terse schemas in database MASTER
+    limit 10000
+[0m13:59:04.282585 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:59:05.093674 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.811 seconds
+[0m13:59:05.097522 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_MASTER, now list_MASTER_STAGE)
+[0m13:59:05.103568 [debug] [ThreadPool]: Using snowflake connection "list_MASTER_STAGE"
+[0m13:59:05.103880 [debug] [ThreadPool]: On list_MASTER_STAGE: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "connection_name": "list_MASTER_STAGE"} */
+show objects in MASTER.STAGE limit 10000;
+[0m13:59:05.440060 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.336 seconds
+[0m13:59:05.446246 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8cc93f68-6dcf-4e9c-9b94-a1ae2f93a5f4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14607df10>]}
+[0m13:59:05.450422 [debug] [Thread-1 (]: Began running node model.nba_stats.FactPlayer
+[0m13:59:05.451209 [debug] [Thread-2 (]: Began running node model.nba_stats.stg_nba_salaries
+[0m13:59:05.451675 [debug] [Thread-3 (]: Began running node model.nba_stats.stg_nba_stats
+[0m13:59:05.452163 [info ] [Thread-1 (]: 1 of 3 START sql table model STAGE.FactPlayer .................................. [RUN]
+[0m13:59:05.452576 [info ] [Thread-2 (]: 2 of 3 START sql view model STAGE.stg_nba_salaries ............................. [RUN]
+[0m13:59:05.452955 [info ] [Thread-3 (]: 3 of 3 START sql view model STAGE.stg_nba_stats ................................ [RUN]
+[0m13:59:05.453356 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_MASTER_STAGE, now model.nba_stats.FactPlayer)
+[0m13:59:05.453713 [debug] [Thread-2 (]: Acquiring new snowflake connection 'model.nba_stats.stg_nba_salaries'
+[0m13:59:05.454055 [debug] [Thread-3 (]: Acquiring new snowflake connection 'model.nba_stats.stg_nba_stats'
+[0m13:59:05.454335 [debug] [Thread-1 (]: Began compiling node model.nba_stats.FactPlayer
+[0m13:59:05.454582 [debug] [Thread-2 (]: Began compiling node model.nba_stats.stg_nba_salaries
+[0m13:59:05.454814 [debug] [Thread-3 (]: Began compiling node model.nba_stats.stg_nba_stats
+[0m13:59:05.463043 [debug] [Thread-1 (]: Writing injected SQL for node "model.nba_stats.FactPlayer"
+[0m13:59:05.466426 [debug] [Thread-2 (]: Writing injected SQL for node "model.nba_stats.stg_nba_salaries"
+[0m13:59:05.469243 [debug] [Thread-3 (]: Writing injected SQL for node "model.nba_stats.stg_nba_stats"
+[0m13:59:05.470426 [debug] [Thread-1 (]: Began executing node model.nba_stats.FactPlayer
+[0m13:59:05.471720 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.FactPlayer"
+[0m13:59:05.471979 [debug] [Thread-1 (]: On model.nba_stats.FactPlayer: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.FactPlayer"} */
+select current_warehouse() as warehouse
+[0m13:59:05.472306 [debug] [Thread-2 (]: Began executing node model.nba_stats.stg_nba_salaries
+[0m13:59:05.472516 [debug] [Thread-3 (]: Began executing node model.nba_stats.stg_nba_stats
+[0m13:59:05.473815 [debug] [Thread-2 (]: Using snowflake connection "model.nba_stats.stg_nba_salaries"
+[0m13:59:05.475041 [debug] [Thread-3 (]: Using snowflake connection "model.nba_stats.stg_nba_stats"
+[0m13:59:05.475295 [debug] [Thread-2 (]: On model.nba_stats.stg_nba_salaries: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_salaries"} */
+select current_warehouse() as warehouse
+[0m13:59:05.475514 [debug] [Thread-3 (]: On model.nba_stats.stg_nba_stats: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_stats"} */
+select current_warehouse() as warehouse
+[0m13:59:05.475719 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m13:59:05.475895 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m13:59:05.622031 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.150 seconds
+[0m13:59:05.623478 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.FactPlayer"
+[0m13:59:05.623688 [debug] [Thread-1 (]: On model.nba_stats.FactPlayer: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.FactPlayer"} */
+use warehouse compute_wh
+[0m13:59:05.752600 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.129 seconds
+[0m13:59:05.784830 [debug] [Thread-1 (]: Writing runtime sql for node "model.nba_stats.FactPlayer"
+[0m13:59:05.786814 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.FactPlayer"
+[0m13:59:05.787164 [debug] [Thread-1 (]: On model.nba_stats.FactPlayer: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.FactPlayer"} */
+create or replace transient table MASTER.STAGE.FactPlayer
+         as
+        (with stats as (
+	select player,
+	age,
+	CASE 
+        WHEN COUNT(DISTINCT team) OVER (PARTITION BY player, year) > 1 THEN '2TM'
+        ELSE team
+    END AS team,
+	pos,
+	round(mp/g,1) as mpg,
+	round(pts/g,1) as ppg,
+	round(trb/g,1) as rpg,
+	round(ast/g,1) as apg,
+	round(stl/g,1) as spg,
+	round(blk/g,1) as bpg,
+	round(tov/g,1) as topg,
+	"FG%",
+	"3P%",
+	"FT%"
+	from MASTER.STAGE.nba_stats
+	where year = year(current_date)
+	QUALIFY ROW_NUMBER() OVER (PARTITION BY player, year ORDER BY team) = 1
+),
+salaries as (
+	select player,
+	CAST(replace(replace("2024-25",'$',''),',','') AS FLOAT) as salary,
+	from MASTER.STAGE.salaries
+	where player is not null
+	QUALIFY ROW_NUMBER() OVER (PARTITION BY player ORDER BY "2024-25") = 1
+)
+
+select
+	stats.player,
+	stats.age,
+	stats.team,
+	stats.pos,
+	stats.mpg,
+	stats.ppg,
+	stats.rpg,
+	stats.apg,
+	stats.spg,
+	stats.bpg,
+	stats.topg,
+	stats."FG%",
+	stats."3P%",
+	stats."FT%",
+	salaries.salary
+from stats
+left join salaries
+on stats.player = salaries.player
+        );
+[0m13:59:05.939928 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.464 seconds
+[0m13:59:05.942733 [debug] [Thread-3 (]: Using snowflake connection "model.nba_stats.stg_nba_stats"
+[0m13:59:05.943091 [debug] [Thread-3 (]: On model.nba_stats.stg_nba_stats: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_stats"} */
+use warehouse compute_wh
+[0m13:59:06.027812 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.552 seconds
+[0m13:59:06.029395 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.086 seconds
+[0m13:59:06.032311 [debug] [Thread-2 (]: Using snowflake connection "model.nba_stats.stg_nba_salaries"
+[0m13:59:06.058076 [debug] [Thread-2 (]: On model.nba_stats.stg_nba_salaries: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_salaries"} */
+use warehouse compute_wh
+[0m13:59:06.064774 [debug] [Thread-3 (]: Writing runtime sql for node "model.nba_stats.stg_nba_stats"
+[0m13:59:06.066912 [debug] [Thread-3 (]: Using snowflake connection "model.nba_stats.stg_nba_stats"
+[0m13:59:06.067381 [debug] [Thread-3 (]: On model.nba_stats.stg_nba_stats: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_stats"} */
+create or replace   view MASTER.STAGE.stg_nba_stats
+  
+   as (
+    select * from MASTER.STAGE.nba_stats
+  );
+[0m13:59:06.159148 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.093 seconds
+[0m13:59:06.163009 [debug] [Thread-2 (]: Writing runtime sql for node "model.nba_stats.stg_nba_salaries"
+[0m13:59:06.164344 [debug] [Thread-2 (]: Using snowflake connection "model.nba_stats.stg_nba_salaries"
+[0m13:59:06.164890 [debug] [Thread-2 (]: On model.nba_stats.stg_nba_salaries: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_salaries"} */
+create or replace   view MASTER.STAGE.stg_nba_salaries
+  
+   as (
+    select * from MASTER.STAGE.salaries
+  );
+[0m13:59:06.611182 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.445 seconds
+[0m13:59:06.638684 [debug] [Thread-2 (]: Using snowflake connection "model.nba_stats.stg_nba_salaries"
+[0m13:59:06.639111 [debug] [Thread-2 (]: On model.nba_stats.stg_nba_salaries: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_salaries"} */
+use warehouse COMPUTE_WH
+[0m13:59:06.735609 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.096 seconds
+[0m13:59:06.741947 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '8cc93f68-6dcf-4e9c-9b94-a1ae2f93a5f4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x146a26420>]}
+[0m13:59:06.742671 [info ] [Thread-2 (]: 2 of 3 OK created sql view model STAGE.stg_nba_salaries ........................ [[32mSUCCESS 1[0m in 1.29s]
+[0m13:59:06.743215 [debug] [Thread-2 (]: Finished running node model.nba_stats.stg_nba_salaries
+[0m13:59:06.862575 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.794 seconds
+[0m13:59:06.868219 [debug] [Thread-3 (]: Using snowflake connection "model.nba_stats.stg_nba_stats"
+[0m13:59:06.868915 [debug] [Thread-3 (]: On model.nba_stats.stg_nba_stats: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_stats"} */
+use warehouse COMPUTE_WH
+[0m13:59:06.982355 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.113 seconds
+[0m13:59:06.984832 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '8cc93f68-6dcf-4e9c-9b94-a1ae2f93a5f4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x146a81f70>]}
+[0m13:59:06.985789 [info ] [Thread-3 (]: 3 of 3 OK created sql view model STAGE.stg_nba_stats ........................... [[32mSUCCESS 1[0m in 1.53s]
+[0m13:59:06.986603 [debug] [Thread-3 (]: Finished running node model.nba_stats.stg_nba_stats
+[0m13:59:08.248122 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 2.460 seconds
+[0m13:59:08.253856 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.FactPlayer"
+[0m13:59:08.254508 [debug] [Thread-1 (]: On model.nba_stats.FactPlayer: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.FactPlayer"} */
+use warehouse COMPUTE_WH
+[0m13:59:08.379008 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.124 seconds
+[0m13:59:08.383781 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '8cc93f68-6dcf-4e9c-9b94-a1ae2f93a5f4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1468fa000>]}
+[0m13:59:08.385755 [info ] [Thread-1 (]: 1 of 3 OK created sql table model STAGE.FactPlayer ............................. [[32mSUCCESS 1[0m in 2.93s]
+[0m13:59:08.387141 [debug] [Thread-1 (]: Finished running node model.nba_stats.FactPlayer
+[0m13:59:08.390386 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:59:08.391299 [debug] [MainThread]: Connection 'model.nba_stats.FactPlayer' was left open.
+[0m13:59:08.391861 [debug] [MainThread]: On model.nba_stats.FactPlayer: Close
+[0m13:59:08.519097 [debug] [MainThread]: Connection 'model.nba_stats.stg_nba_salaries' was left open.
+[0m13:59:08.519830 [debug] [MainThread]: On model.nba_stats.stg_nba_salaries: Close
+[0m13:59:08.619809 [debug] [MainThread]: Connection 'model.nba_stats.stg_nba_stats' was left open.
+[0m13:59:08.621040 [debug] [MainThread]: On model.nba_stats.stg_nba_stats: Close
+[0m13:59:08.720888 [info ] [MainThread]: 
+[0m13:59:08.721905 [info ] [MainThread]: Finished running 1 table model, 2 view models in 0 hours 0 minutes and 4.48 seconds (4.48s).
+[0m13:59:08.724143 [debug] [MainThread]: Command end result
+[0m13:59:08.753565 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/miloszubac/nba_stats/target/manifest.json
+[0m13:59:08.756472 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/miloszubac/nba_stats/target/semantic_manifest.json
+[0m13:59:08.773838 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/miloszubac/nba_stats/target/run_results.json
+[0m13:59:08.774246 [info ] [MainThread]: 
+[0m13:59:08.774661 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m13:59:08.774914 [info ] [MainThread]: 
+[0m13:59:08.775285 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m13:59:08.778768 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 6.369965, "process_in_blocks": "0", "process_kernel_time": 0.494509, "process_mem_max_rss": "183713792", "process_out_blocks": "0", "process_user_time": 3.550483}
+[0m13:59:08.779378 [debug] [MainThread]: Command `dbt run` succeeded at 13:59:08.779280 after 6.37 seconds
+[0m13:59:08.780110 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1130198e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1075a03e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110540c20>]}
+[0m13:59:08.782095 [debug] [MainThread]: Flushing usage events
+[0m13:59:08.944919 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:08:15.809575 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106be7dd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107a53080>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107c126c0>]}
+
+
+============================== 10:08:15.813563 | 4e01bc69-dd5b-43ae-b642-d725b46a618f ==============================
+[0m10:08:15.813563 [info ] [MainThread]: Running with dbt=1.9.3
+[0m10:08:15.813919 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': '/Users/miloszubac/nba_stats_pipeline/dags/dbt/nba_stats/logs', 'fail_fast': 'False', 'profiles_dir': '/Users/miloszubac/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True'}
+[0m10:08:15.817322 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.snowflake'
+[0m10:08:15.817598 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Credentials in profile "nba_stats", target "dev" invalid: Runtime Error
+    Could not find adapter type snowflake!
+[0m10:08:15.840738 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.087135956, "process_in_blocks": "0", "process_kernel_time": 0.146519, "process_mem_max_rss": "101924864", "process_out_blocks": "0", "process_user_time": 0.850438}
+[0m10:08:15.841135 [debug] [MainThread]: Command `dbt run` failed at 10:08:15.841063 after 0.09 seconds
+[0m10:08:15.841384 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106637080>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106b61760>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106f25c70>]}
+[0m10:08:15.841621 [debug] [MainThread]: Flushing usage events
+[0m10:08:15.987391 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:08:59.868783 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x119643d70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x119902750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1199024b0>]}
+
+
+============================== 10:08:59.872280 | bd42ac6b-6c32-46d0-a367-7a1e114b91e3 ==============================
+[0m10:08:59.872280 [info ] [MainThread]: Running with dbt=1.9.3
+[0m10:08:59.872742 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/Users/miloszubac/nba_stats_pipeline/dags/dbt/nba_stats/logs', 'debug': 'False', 'profiles_dir': '/Users/miloszubac/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m10:09:03.794098 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'bd42ac6b-6c32-46d0-a367-7a1e114b91e3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12f85e300>]}
+[0m10:09:03.820548 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'bd42ac6b-6c32-46d0-a367-7a1e114b91e3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12fc95b80>]}
+[0m10:09:03.821240 [info ] [MainThread]: Registered adapter: snowflake=1.9.2
+[0m10:09:03.946623 [debug] [MainThread]: checksum: 5671c00892cdbcef29c3b00cc5ba7510c3d18a35c883caeb9ab9ee266dc29c8f, vars: {}, profile: , target: , version: 1.9.3
+[0m10:09:03.985193 [info ] [MainThread]: Unable to do partial parsing because of a version mismatch
+[0m10:09:03.985484 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'bd42ac6b-6c32-46d0-a367-7a1e114b91e3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11931ae10>]}
+[0m10:09:04.514020 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'bd42ac6b-6c32-46d0-a367-7a1e114b91e3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x154be66c0>]}
+[0m10:09:04.545717 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/miloszubac/nba_stats_pipeline/dags/dbt/nba_stats/target/manifest.json
+[0m10:09:04.546995 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/miloszubac/nba_stats_pipeline/dags/dbt/nba_stats/target/semantic_manifest.json
+[0m10:09:04.557404 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'bd42ac6b-6c32-46d0-a367-7a1e114b91e3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x15492ad80>]}
+[0m10:09:04.557660 [info ] [MainThread]: Found 3 models, 2 sources, 474 macros
+[0m10:09:04.557828 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'bd42ac6b-6c32-46d0-a367-7a1e114b91e3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x154be6d80>]}
+[0m10:09:04.558690 [info ] [MainThread]: 
+[0m10:09:04.558863 [info ] [MainThread]: Concurrency: 10 threads (target='dev')
+[0m10:09:04.558997 [info ] [MainThread]: 
+[0m10:09:04.559232 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m10:09:04.561363 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_MASTER'
+[0m10:09:04.599862 [debug] [ThreadPool]: Using snowflake connection "list_MASTER"
+[0m10:09:04.600088 [debug] [ThreadPool]: On list_MASTER: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "connection_name": "list_MASTER"} */
+show terse schemas in database MASTER
+    limit 10000
+[0m10:09:04.600234 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:09:05.438909 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.839 seconds
+[0m10:09:05.442879 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_MASTER, now list_MASTER_STAGE)
+[0m10:09:05.455763 [debug] [ThreadPool]: Using snowflake connection "list_MASTER_STAGE"
+[0m10:09:05.456148 [debug] [ThreadPool]: On list_MASTER_STAGE: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "connection_name": "list_MASTER_STAGE"} */
+show objects in MASTER.STAGE limit 10000;
+[0m10:09:05.767831 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.311 seconds
+[0m10:09:05.774121 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'bd42ac6b-6c32-46d0-a367-7a1e114b91e3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10654a5a0>]}
+[0m10:09:05.783820 [debug] [Thread-1 (]: Began running node model.nba_stats.FactPlayer
+[0m10:09:05.784425 [debug] [Thread-2 (]: Began running node model.nba_stats.stg_nba_salaries
+[0m10:09:05.785518 [debug] [Thread-3 (]: Began running node model.nba_stats.stg_nba_stats
+[0m10:09:05.785118 [info ] [Thread-1 (]: 1 of 3 START sql table model STAGE.FactPlayer .................................. [RUN]
+[0m10:09:05.786232 [info ] [Thread-2 (]: 2 of 3 START sql view model STAGE.stg_nba_salaries ............................. [RUN]
+[0m10:09:05.786787 [info ] [Thread-3 (]: 3 of 3 START sql view model STAGE.stg_nba_stats ................................ [RUN]
+[0m10:09:05.787316 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_MASTER_STAGE, now model.nba_stats.FactPlayer)
+[0m10:09:05.787891 [debug] [Thread-2 (]: Acquiring new snowflake connection 'model.nba_stats.stg_nba_salaries'
+[0m10:09:05.788375 [debug] [Thread-3 (]: Acquiring new snowflake connection 'model.nba_stats.stg_nba_stats'
+[0m10:09:05.788780 [debug] [Thread-1 (]: Began compiling node model.nba_stats.FactPlayer
+[0m10:09:05.789176 [debug] [Thread-2 (]: Began compiling node model.nba_stats.stg_nba_salaries
+[0m10:09:05.789541 [debug] [Thread-3 (]: Began compiling node model.nba_stats.stg_nba_stats
+[0m10:09:05.799157 [debug] [Thread-1 (]: Writing injected SQL for node "model.nba_stats.FactPlayer"
+[0m10:09:05.801969 [debug] [Thread-2 (]: Writing injected SQL for node "model.nba_stats.stg_nba_salaries"
+[0m10:09:05.804499 [debug] [Thread-3 (]: Writing injected SQL for node "model.nba_stats.stg_nba_stats"
+[0m10:09:05.805833 [debug] [Thread-3 (]: Began executing node model.nba_stats.stg_nba_stats
+[0m10:09:05.806218 [debug] [Thread-2 (]: Began executing node model.nba_stats.stg_nba_salaries
+[0m10:09:05.806529 [debug] [Thread-1 (]: Began executing node model.nba_stats.FactPlayer
+[0m10:09:05.808443 [debug] [Thread-3 (]: Using snowflake connection "model.nba_stats.stg_nba_stats"
+[0m10:09:05.810127 [debug] [Thread-2 (]: Using snowflake connection "model.nba_stats.stg_nba_salaries"
+[0m10:09:05.811841 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.FactPlayer"
+[0m10:09:05.812162 [debug] [Thread-3 (]: On model.nba_stats.stg_nba_stats: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_stats"} */
+select current_warehouse() as warehouse
+[0m10:09:05.812480 [debug] [Thread-2 (]: On model.nba_stats.stg_nba_salaries: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_salaries"} */
+select current_warehouse() as warehouse
+[0m10:09:05.812800 [debug] [Thread-1 (]: On model.nba_stats.FactPlayer: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.FactPlayer"} */
+select current_warehouse() as warehouse
+[0m10:09:05.813099 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m10:09:05.813369 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m10:09:06.001496 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.188 seconds
+[0m10:09:06.002555 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.FactPlayer"
+[0m10:09:06.002785 [debug] [Thread-1 (]: On model.nba_stats.FactPlayer: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.FactPlayer"} */
+use warehouse compute_wh
+[0m10:09:06.107882 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.105 seconds
+[0m10:09:06.135654 [debug] [Thread-1 (]: Writing runtime sql for node "model.nba_stats.FactPlayer"
+[0m10:09:06.137241 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.FactPlayer"
+[0m10:09:06.137560 [debug] [Thread-1 (]: On model.nba_stats.FactPlayer: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.FactPlayer"} */
+create or replace transient table MASTER.STAGE.FactPlayer
+         as
+        (with stats as (
+	select player,
+	age,
+	CASE 
+        WHEN COUNT(DISTINCT team) OVER (PARTITION BY player, year) > 1 THEN '2TM'
+        ELSE team
+    END AS team,
+	pos,
+	round(mp/g,1) as mpg,
+	round(pts/g,1) as ppg,
+	round(trb/g,1) as rpg,
+	round(ast/g,1) as apg,
+	round(stl/g,1) as spg,
+	round(blk/g,1) as bpg,
+	round(tov/g,1) as topg,
+	"FG%",
+	"3P%",
+	"FT%"
+	from MASTER.STAGE.nba_stats
+	where year = year(current_date)
+	QUALIFY ROW_NUMBER() OVER (PARTITION BY player, year ORDER BY team) = 1
+),
+salaries as (
+	select player,
+	CAST(replace(replace("2024-25",'$',''),',','') AS FLOAT) as salary,
+	from MASTER.STAGE.salaries
+	where player is not null
+	QUALIFY ROW_NUMBER() OVER (PARTITION BY player ORDER BY "2024-25") = 1
+)
+
+select
+	stats.player,
+	stats.age,
+	stats.team,
+	stats.pos,
+	stats.mpg,
+	stats.ppg,
+	stats.rpg,
+	stats.apg,
+	stats.spg,
+	stats.bpg,
+	stats.topg,
+	stats."FG%",
+	stats."3P%",
+	stats."FT%",
+	salaries.salary
+from stats
+left join salaries
+on stats.player = salaries.player
+        );
+[0m10:09:06.943054 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 1.129 seconds
+[0m10:09:06.947115 [debug] [Thread-2 (]: Using snowflake connection "model.nba_stats.stg_nba_salaries"
+[0m10:09:06.947666 [debug] [Thread-2 (]: On model.nba_stats.stg_nba_salaries: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_salaries"} */
+use warehouse compute_wh
+[0m10:09:07.021174 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.073 seconds
+[0m10:09:07.054932 [debug] [Thread-2 (]: Writing runtime sql for node "model.nba_stats.stg_nba_salaries"
+[0m10:09:07.056578 [debug] [Thread-2 (]: Using snowflake connection "model.nba_stats.stg_nba_salaries"
+[0m10:09:07.056946 [debug] [Thread-2 (]: On model.nba_stats.stg_nba_salaries: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_salaries"} */
+create or replace   view MASTER.STAGE.stg_nba_salaries
+  
+   as (
+    select * from MASTER.STAGE.salaries
+  );
+[0m10:09:07.122903 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 1.309 seconds
+[0m10:09:07.126079 [debug] [Thread-3 (]: Using snowflake connection "model.nba_stats.stg_nba_stats"
+[0m10:09:07.126787 [debug] [Thread-3 (]: On model.nba_stats.stg_nba_stats: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_stats"} */
+use warehouse compute_wh
+[0m10:09:07.231183 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.103 seconds
+[0m10:09:07.236591 [debug] [Thread-3 (]: Writing runtime sql for node "model.nba_stats.stg_nba_stats"
+[0m10:09:07.238564 [debug] [Thread-3 (]: Using snowflake connection "model.nba_stats.stg_nba_stats"
+[0m10:09:07.239338 [debug] [Thread-3 (]: On model.nba_stats.stg_nba_stats: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_stats"} */
+create or replace   view MASTER.STAGE.stg_nba_stats
+  
+   as (
+    select * from MASTER.STAGE.nba_stats
+  );
+[0m10:09:07.660514 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.603 seconds
+[0m10:09:07.693094 [debug] [Thread-2 (]: Using snowflake connection "model.nba_stats.stg_nba_salaries"
+[0m10:09:07.693651 [debug] [Thread-2 (]: On model.nba_stats.stg_nba_salaries: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_salaries"} */
+use warehouse COMPUTE_WH
+[0m10:09:07.984594 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.744 seconds
+[0m10:09:07.990082 [debug] [Thread-3 (]: Using snowflake connection "model.nba_stats.stg_nba_stats"
+[0m10:09:07.990839 [debug] [Thread-3 (]: On model.nba_stats.stg_nba_stats: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_stats"} */
+use warehouse COMPUTE_WH
+[0m10:09:08.280679 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.289 seconds
+[0m10:09:08.302709 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.609 seconds
+[0m10:09:08.304184 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'bd42ac6b-6c32-46d0-a367-7a1e114b91e3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10647be90>]}
+[0m10:09:08.304569 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'bd42ac6b-6c32-46d0-a367-7a1e114b91e3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1548b0d40>]}
+[0m10:09:08.305287 [info ] [Thread-3 (]: 3 of 3 OK created sql view model STAGE.stg_nba_stats ........................... [[32mSUCCESS 1[0m in 2.51s]
+[0m10:09:08.306433 [debug] [Thread-3 (]: Finished running node model.nba_stats.stg_nba_stats
+[0m10:09:08.305774 [info ] [Thread-2 (]: 2 of 3 OK created sql view model STAGE.stg_nba_salaries ........................ [[32mSUCCESS 1[0m in 2.52s]
+[0m10:09:08.307334 [debug] [Thread-2 (]: Finished running node model.nba_stats.stg_nba_salaries
+[0m10:09:08.785123 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 2.647 seconds
+[0m10:09:08.789646 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.FactPlayer"
+[0m10:09:08.790314 [debug] [Thread-1 (]: On model.nba_stats.FactPlayer: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.FactPlayer"} */
+use warehouse COMPUTE_WH
+[0m10:09:08.861346 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.070 seconds
+[0m10:09:08.867139 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'bd42ac6b-6c32-46d0-a367-7a1e114b91e3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x15514a090>]}
+[0m10:09:08.869100 [info ] [Thread-1 (]: 1 of 3 OK created sql table model STAGE.FactPlayer ............................. [[32mSUCCESS 1[0m in 3.08s]
+[0m10:09:08.870529 [debug] [Thread-1 (]: Finished running node model.nba_stats.FactPlayer
+[0m10:09:08.874370 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:09:08.875039 [debug] [MainThread]: Connection 'model.nba_stats.FactPlayer' was left open.
+[0m10:09:08.875504 [debug] [MainThread]: On model.nba_stats.FactPlayer: Close
+[0m10:09:08.950173 [debug] [MainThread]: Connection 'model.nba_stats.stg_nba_salaries' was left open.
+[0m10:09:08.950921 [debug] [MainThread]: On model.nba_stats.stg_nba_salaries: Close
+[0m10:09:09.029435 [debug] [MainThread]: Connection 'model.nba_stats.stg_nba_stats' was left open.
+[0m10:09:09.030395 [debug] [MainThread]: On model.nba_stats.stg_nba_stats: Close
+[0m10:09:09.117494 [info ] [MainThread]: 
+[0m10:09:09.118449 [info ] [MainThread]: Finished running 1 table model, 2 view models in 0 hours 0 minutes and 4.56 seconds (4.56s).
+[0m10:09:09.119681 [debug] [MainThread]: Command end result
+[0m10:09:09.144179 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/miloszubac/nba_stats_pipeline/dags/dbt/nba_stats/target/manifest.json
+[0m10:09:09.146108 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/miloszubac/nba_stats_pipeline/dags/dbt/nba_stats/target/semantic_manifest.json
+[0m10:09:09.150783 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/miloszubac/nba_stats_pipeline/dags/dbt/nba_stats/target/run_results.json
+[0m10:09:09.151042 [info ] [MainThread]: 
+[0m10:09:09.151335 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m10:09:09.151550 [info ] [MainThread]: 
+[0m10:09:09.151816 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m10:09:09.154265 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 9.3277, "process_in_blocks": "0", "process_kernel_time": 0.465666, "process_mem_max_rss": "195592192", "process_out_blocks": "0", "process_user_time": 4.520487}
+[0m10:09:09.154653 [debug] [MainThread]: Command `dbt run` succeeded at 10:09:09.154578 after 9.33 seconds
+[0m10:09:09.154991 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1197e4140>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x15512cf80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12f85e900>]}
+[0m10:09:09.155267 [debug] [MainThread]: Flushing usage events
+[0m10:09:09.292486 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:37:40.001685 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffaa563320>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffaa52e660>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa9a8a0f0>]}
+
+
+============================== 14:37:40.004877 | c85d803d-e548-4349-a7fa-2df7df5a7151 ==============================
+[0m14:37:40.004877 [info ] [MainThread]: Running with dbt=1.9.3
+[0m14:37:40.005431 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/usr/local/airflow/dags/dbt/nba_stats', 'version_check': 'True', 'warn_error': 'None', 'log_path': '/usr/local/airflow/dags/dbt/nba_stats/logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m14:37:40.509320 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c85d803d-e548-4349-a7fa-2df7df5a7151', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffaa5ba210>]}
+[0m14:37:40.538361 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c85d803d-e548-4349-a7fa-2df7df5a7151', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8e4c2030>]}
+[0m14:37:40.539100 [info ] [MainThread]: Registered adapter: snowflake=1.9.2
+[0m14:37:40.590464 [debug] [MainThread]: checksum: 5671c00892cdbcef29c3b00cc5ba7510c3d18a35c883caeb9ab9ee266dc29c8f, vars: {}, profile: , target: , version: 1.9.3
+[0m14:37:40.661083 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m14:37:40.661390 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m14:37:40.676795 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'c85d803d-e548-4349-a7fa-2df7df5a7151', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8e886630>]}
+[0m14:37:40.713548 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/local/airflow/dags/dbt/nba_stats/target/manifest.json
+[0m14:37:40.715614 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/local/airflow/dags/dbt/nba_stats/target/semantic_manifest.json
+[0m14:37:40.726558 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c85d803d-e548-4349-a7fa-2df7df5a7151', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8e314290>]}
+[0m14:37:40.726866 [info ] [MainThread]: Found 3 models, 2 sources, 474 macros
+[0m14:37:40.727189 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c85d803d-e548-4349-a7fa-2df7df5a7151', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8e3aa930>]}
+[0m14:37:40.728248 [info ] [MainThread]: 
+[0m14:37:40.728503 [info ] [MainThread]: Concurrency: 10 threads (target='dev')
+[0m14:37:40.728757 [info ] [MainThread]: 
+[0m14:37:40.729167 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m14:37:40.731601 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_MASTER'
+[0m14:37:40.757411 [debug] [ThreadPool]: Using snowflake connection "list_MASTER"
+[0m14:37:40.757714 [debug] [ThreadPool]: On list_MASTER: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "connection_name": "list_MASTER"} */
+show terse schemas in database MASTER
+    limit 10000
+[0m14:37:40.757914 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:37:42.109866 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 1.352 seconds
+[0m14:37:42.115863 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_MASTER, now list_MASTER_STAGE)
+[0m14:37:42.132708 [debug] [ThreadPool]: Using snowflake connection "list_MASTER_STAGE"
+[0m14:37:42.133519 [debug] [ThreadPool]: On list_MASTER_STAGE: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "connection_name": "list_MASTER_STAGE"} */
+show objects in MASTER.STAGE limit 10000;
+[0m14:37:42.425694 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.291 seconds
+[0m14:37:42.432799 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c85d803d-e548-4349-a7fa-2df7df5a7151', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8e4c3350>]}
+[0m14:37:42.443704 [debug] [Thread-1 (]: Began running node model.nba_stats.FactPlayer
+[0m14:37:42.444311 [debug] [Thread-2 (]: Began running node model.nba_stats.stg_nba_salaries
+[0m14:37:42.444890 [debug] [Thread-3 (]: Began running node model.nba_stats.stg_nba_stats
+[0m14:37:42.445619 [info ] [Thread-1 (]: 1 of 3 START sql table model STAGE.FactPlayer .................................. [RUN]
+[0m14:37:42.446636 [info ] [Thread-2 (]: 2 of 3 START sql view model STAGE.stg_nba_salaries ............................. [RUN]
+[0m14:37:42.447550 [info ] [Thread-3 (]: 3 of 3 START sql view model STAGE.stg_nba_stats ................................ [RUN]
+[0m14:37:42.448299 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_MASTER_STAGE, now model.nba_stats.FactPlayer)
+[0m14:37:42.449124 [debug] [Thread-2 (]: Acquiring new snowflake connection 'model.nba_stats.stg_nba_salaries'
+[0m14:37:42.449783 [debug] [Thread-3 (]: Acquiring new snowflake connection 'model.nba_stats.stg_nba_stats'
+[0m14:37:42.451460 [debug] [Thread-3 (]: Began compiling node model.nba_stats.stg_nba_stats
+[0m14:37:42.450883 [debug] [Thread-2 (]: Began compiling node model.nba_stats.stg_nba_salaries
+[0m14:37:42.450270 [debug] [Thread-1 (]: Began compiling node model.nba_stats.FactPlayer
+[0m14:37:42.460525 [debug] [Thread-3 (]: Writing injected SQL for node "model.nba_stats.stg_nba_stats"
+[0m14:37:42.464641 [debug] [Thread-2 (]: Writing injected SQL for node "model.nba_stats.stg_nba_salaries"
+[0m14:37:42.468349 [debug] [Thread-1 (]: Writing injected SQL for node "model.nba_stats.FactPlayer"
+[0m14:37:42.472017 [debug] [Thread-3 (]: Began executing node model.nba_stats.stg_nba_stats
+[0m14:37:42.472611 [debug] [Thread-2 (]: Began executing node model.nba_stats.stg_nba_salaries
+[0m14:37:42.474565 [debug] [Thread-3 (]: Using snowflake connection "model.nba_stats.stg_nba_stats"
+[0m14:37:42.474956 [debug] [Thread-1 (]: Began executing node model.nba_stats.FactPlayer
+[0m14:37:42.478783 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.FactPlayer"
+[0m14:37:42.476981 [debug] [Thread-3 (]: On model.nba_stats.stg_nba_stats: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_stats"} */
+select current_warehouse() as warehouse
+[0m14:37:42.476645 [debug] [Thread-2 (]: Using snowflake connection "model.nba_stats.stg_nba_salaries"
+[0m14:37:42.479146 [debug] [Thread-1 (]: On model.nba_stats.FactPlayer: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.FactPlayer"} */
+select current_warehouse() as warehouse
+[0m14:37:42.479523 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m14:37:42.479827 [debug] [Thread-2 (]: On model.nba_stats.stg_nba_salaries: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_salaries"} */
+select current_warehouse() as warehouse
+[0m14:37:42.482285 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m14:37:42.594335 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.114 seconds
+[0m14:37:42.596069 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.FactPlayer"
+[0m14:37:42.596570 [debug] [Thread-1 (]: On model.nba_stats.FactPlayer: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.FactPlayer"} */
+use warehouse compute_wh
+[0m14:37:42.768716 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.172 seconds
+[0m14:37:42.786886 [debug] [Thread-1 (]: Writing runtime sql for node "model.nba_stats.FactPlayer"
+[0m14:37:42.788314 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.FactPlayer"
+[0m14:37:42.788612 [debug] [Thread-1 (]: On model.nba_stats.FactPlayer: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.FactPlayer"} */
+create or replace transient table MASTER.STAGE.FactPlayer
+         as
+        (with stats as (
+	select player,
+	age,
+	CASE 
+        WHEN COUNT(DISTINCT team) OVER (PARTITION BY player, year) > 1 THEN '2TM'
+        ELSE team
+    END AS team,
+	pos,
+	round(mp/g,1) as mpg,
+	round(pts/g,1) as ppg,
+	round(trb/g,1) as rpg,
+	round(ast/g,1) as apg,
+	round(stl/g,1) as spg,
+	round(blk/g,1) as bpg,
+	round(tov/g,1) as topg,
+	"FG%",
+	"3P%",
+	"FT%"
+	from MASTER.STAGE.nba_stats
+	where year = year(current_date)
+	QUALIFY ROW_NUMBER() OVER (PARTITION BY player, year ORDER BY team) = 1
+),
+salaries as (
+	select player,
+	CAST(replace(replace("2024-25",'$',''),',','') AS FLOAT) as salary,
+	from MASTER.STAGE.salaries
+	where player is not null
+	QUALIFY ROW_NUMBER() OVER (PARTITION BY player ORDER BY "2024-25") = 1
+)
+
+select
+	stats.player,
+	stats.age,
+	stats.team,
+	stats.pos,
+	stats.mpg,
+	stats.ppg,
+	stats.rpg,
+	stats.apg,
+	stats.spg,
+	stats.bpg,
+	stats.topg,
+	stats."FG%",
+	stats."3P%",
+	stats."FT%",
+	salaries.salary
+from stats
+left join salaries
+on stats.player = salaries.player
+        );
+[0m14:37:42.828004 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.346 seconds
+[0m14:37:42.829128 [debug] [Thread-2 (]: Using snowflake connection "model.nba_stats.stg_nba_salaries"
+[0m14:37:42.829457 [debug] [Thread-2 (]: On model.nba_stats.stg_nba_salaries: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_salaries"} */
+use warehouse compute_wh
+[0m14:37:42.838513 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.359 seconds
+[0m14:37:42.839446 [debug] [Thread-3 (]: Using snowflake connection "model.nba_stats.stg_nba_stats"
+[0m14:37:42.839764 [debug] [Thread-3 (]: On model.nba_stats.stg_nba_stats: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_stats"} */
+use warehouse compute_wh
+[0m14:37:42.894658 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.065 seconds
+[0m14:37:42.912324 [debug] [Thread-2 (]: Writing runtime sql for node "model.nba_stats.stg_nba_salaries"
+[0m14:37:42.912909 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.073 seconds
+[0m14:37:42.914473 [debug] [Thread-3 (]: Writing runtime sql for node "model.nba_stats.stg_nba_stats"
+[0m14:37:42.915266 [debug] [Thread-2 (]: Using snowflake connection "model.nba_stats.stg_nba_salaries"
+[0m14:37:42.915622 [debug] [Thread-2 (]: On model.nba_stats.stg_nba_salaries: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_salaries"} */
+create or replace   view MASTER.STAGE.stg_nba_salaries
+  
+   as (
+    select * from MASTER.STAGE.salaries
+  );
+[0m14:37:42.916979 [debug] [Thread-3 (]: Using snowflake connection "model.nba_stats.stg_nba_stats"
+[0m14:37:42.917303 [debug] [Thread-3 (]: On model.nba_stats.stg_nba_stats: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_stats"} */
+create or replace   view MASTER.STAGE.stg_nba_stats
+  
+   as (
+    select * from MASTER.STAGE.nba_stats
+  );
+[0m14:37:43.378577 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.462 seconds
+[0m14:37:43.410916 [debug] [Thread-2 (]: Using snowflake connection "model.nba_stats.stg_nba_salaries"
+[0m14:37:43.411639 [debug] [Thread-2 (]: On model.nba_stats.stg_nba_salaries: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_salaries"} */
+use warehouse COMPUTE_WH
+[0m14:37:43.482577 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.070 seconds
+[0m14:37:43.489257 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c85d803d-e548-4349-a7fa-2df7df5a7151', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffab88a270>]}
+[0m14:37:43.490429 [info ] [Thread-2 (]: 2 of 3 OK created sql view model STAGE.stg_nba_salaries ........................ [[32mSUCCESS 1[0m in 1.04s]
+[0m14:37:43.491668 [debug] [Thread-2 (]: Finished running node model.nba_stats.stg_nba_salaries
+[0m14:37:43.756809 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.839 seconds
+[0m14:37:43.761938 [debug] [Thread-3 (]: Using snowflake connection "model.nba_stats.stg_nba_stats"
+[0m14:37:43.762925 [debug] [Thread-3 (]: On model.nba_stats.stg_nba_stats: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_stats"} */
+use warehouse COMPUTE_WH
+[0m14:37:43.839267 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.075 seconds
+[0m14:37:43.842747 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c85d803d-e548-4349-a7fa-2df7df5a7151', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8d3ea2a0>]}
+[0m14:37:43.843920 [info ] [Thread-3 (]: 3 of 3 OK created sql view model STAGE.stg_nba_stats ........................... [[32mSUCCESS 1[0m in 1.39s]
+[0m14:37:43.845183 [debug] [Thread-3 (]: Finished running node model.nba_stats.stg_nba_stats
+[0m14:37:45.807651 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 3.018 seconds
+[0m14:37:45.813621 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.FactPlayer"
+[0m14:37:45.814531 [debug] [Thread-1 (]: On model.nba_stats.FactPlayer: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.FactPlayer"} */
+use warehouse COMPUTE_WH
+[0m14:37:45.884877 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.069 seconds
+[0m14:37:45.889185 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c85d803d-e548-4349-a7fa-2df7df5a7151', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8d40e1e0>]}
+[0m14:37:45.890578 [info ] [Thread-1 (]: 1 of 3 OK created sql table model STAGE.FactPlayer ............................. [[32mSUCCESS 1[0m in 3.44s]
+[0m14:37:45.891790 [debug] [Thread-1 (]: Finished running node model.nba_stats.FactPlayer
+[0m14:37:45.895529 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:37:45.896199 [debug] [MainThread]: Connection 'model.nba_stats.FactPlayer' was left open.
+[0m14:37:45.896828 [debug] [MainThread]: On model.nba_stats.FactPlayer: Close
+[0m14:37:45.977685 [debug] [MainThread]: Connection 'model.nba_stats.stg_nba_salaries' was left open.
+[0m14:37:45.979041 [debug] [MainThread]: On model.nba_stats.stg_nba_salaries: Close
+[0m14:37:46.050989 [debug] [MainThread]: Connection 'model.nba_stats.stg_nba_stats' was left open.
+[0m14:37:46.052142 [debug] [MainThread]: On model.nba_stats.stg_nba_stats: Close
+[0m14:37:46.124353 [info ] [MainThread]: 
+[0m14:37:46.125085 [info ] [MainThread]: Finished running 1 table model, 2 view models in 0 hours 0 minutes and 5.40 seconds (5.40s).
+[0m14:37:46.126561 [debug] [MainThread]: Command end result
+[0m14:37:46.154311 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/local/airflow/dags/dbt/nba_stats/target/manifest.json
+[0m14:37:46.156201 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/local/airflow/dags/dbt/nba_stats/target/semantic_manifest.json
+[0m14:37:46.160916 [debug] [MainThread]: Wrote artifact RunExecutionResult to /usr/local/airflow/dags/dbt/nba_stats/target/run_results.json
+[0m14:37:46.161182 [info ] [MainThread]: 
+[0m14:37:46.161471 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m14:37:46.161780 [info ] [MainThread]: 
+[0m14:37:46.162135 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m14:37:46.163179 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 6.1955647, "process_in_blocks": "40320", "process_kernel_time": 0.432027, "process_mem_max_rss": "209316", "process_out_blocks": "4473", "process_user_time": 2.420368}
+[0m14:37:46.163632 [debug] [MainThread]: Command `dbt run` succeeded at 14:37:46.163564 after 6.20 seconds
+[0m14:37:46.163912 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa99ee090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffaa589640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa9c854c0>]}
+[0m14:37:46.164204 [debug] [MainThread]: Flushing usage events
+[0m14:37:46.332372 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:40:24.994099 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa47904d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa47eb320>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa47ea630>]}
+
+
+============================== 14:40:24.997211 | 7bc7925f-7c2e-474a-a9b3-b6c9e7b9c845 ==============================
+[0m14:40:24.997211 [info ] [MainThread]: Running with dbt=1.9.3
+[0m14:40:24.997679 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/usr/local/airflow/dags/dbt/nba_stats/logs', 'debug': 'False', 'profiles_dir': '/usr/local/airflow/dags/dbt/nba_stats', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt run', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m14:40:25.469179 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '7bc7925f-7c2e-474a-a9b3-b6c9e7b9c845', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff892d0f80>]}
+[0m14:40:25.496170 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '7bc7925f-7c2e-474a-a9b3-b6c9e7b9c845', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa4e5ed20>]}
+[0m14:40:25.496710 [info ] [MainThread]: Registered adapter: snowflake=1.9.2
+[0m14:40:25.546205 [debug] [MainThread]: checksum: 5671c00892cdbcef29c3b00cc5ba7510c3d18a35c883caeb9ab9ee266dc29c8f, vars: {}, profile: , target: , version: 1.9.3
+[0m14:40:25.663736 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m14:40:25.664153 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m14:40:25.686705 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '7bc7925f-7c2e-474a-a9b3-b6c9e7b9c845', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff88fabd10>]}
+[0m14:40:25.728741 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/local/airflow/dags/dbt/nba_stats/target/manifest.json
+[0m14:40:25.730664 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/local/airflow/dags/dbt/nba_stats/target/semantic_manifest.json
+[0m14:40:25.740691 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '7bc7925f-7c2e-474a-a9b3-b6c9e7b9c845', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff88ec3050>]}
+[0m14:40:25.741026 [info ] [MainThread]: Found 3 models, 2 sources, 474 macros
+[0m14:40:25.741304 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7bc7925f-7c2e-474a-a9b3-b6c9e7b9c845', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff88c5b9b0>]}
+[0m14:40:25.742402 [info ] [MainThread]: 
+[0m14:40:25.742756 [info ] [MainThread]: Concurrency: 10 threads (target='dev')
+[0m14:40:25.743055 [info ] [MainThread]: 
+[0m14:40:25.743502 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m14:40:25.746267 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_MASTER'
+[0m14:40:25.770629 [debug] [ThreadPool]: Using snowflake connection "list_MASTER"
+[0m14:40:25.770928 [debug] [ThreadPool]: On list_MASTER: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "connection_name": "list_MASTER"} */
+show terse schemas in database MASTER
+    limit 10000
+[0m14:40:25.771128 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:40:26.301579 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.530 seconds
+[0m14:40:26.305498 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_MASTER, now list_MASTER_STAGE)
+[0m14:40:26.317485 [debug] [ThreadPool]: Using snowflake connection "list_MASTER_STAGE"
+[0m14:40:26.318016 [debug] [ThreadPool]: On list_MASTER_STAGE: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "connection_name": "list_MASTER_STAGE"} */
+show objects in MASTER.STAGE limit 10000;
+[0m14:40:26.457888 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.139 seconds
+[0m14:40:26.464980 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7bc7925f-7c2e-474a-a9b3-b6c9e7b9c845', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff88c5bb60>]}
+[0m14:40:26.473684 [debug] [Thread-1 (]: Began running node model.nba_stats.FactPlayer
+[0m14:40:26.474408 [debug] [Thread-2 (]: Began running node model.nba_stats.stg_nba_salaries
+[0m14:40:26.476702 [info ] [Thread-2 (]: 2 of 3 START sql view model STAGE.stg_nba_salaries ............................. [RUN]
+[0m14:40:26.475881 [debug] [Thread-3 (]: Began running node model.nba_stats.stg_nba_stats
+[0m14:40:26.475101 [info ] [Thread-1 (]: 1 of 3 START sql table model STAGE.FactPlayer .................................. [RUN]
+[0m14:40:26.477530 [debug] [Thread-2 (]: Acquiring new snowflake connection 'model.nba_stats.stg_nba_salaries'
+[0m14:40:26.478382 [info ] [Thread-3 (]: 3 of 3 START sql view model STAGE.stg_nba_stats ................................ [RUN]
+[0m14:40:26.479113 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_MASTER_STAGE, now model.nba_stats.FactPlayer)
+[0m14:40:26.479682 [debug] [Thread-2 (]: Began compiling node model.nba_stats.stg_nba_salaries
+[0m14:40:26.480431 [debug] [Thread-3 (]: Acquiring new snowflake connection 'model.nba_stats.stg_nba_stats'
+[0m14:40:26.481022 [debug] [Thread-1 (]: Began compiling node model.nba_stats.FactPlayer
+[0m14:40:26.490318 [debug] [Thread-2 (]: Writing injected SQL for node "model.nba_stats.stg_nba_salaries"
+[0m14:40:26.490757 [debug] [Thread-3 (]: Began compiling node model.nba_stats.stg_nba_stats
+[0m14:40:26.495542 [debug] [Thread-1 (]: Writing injected SQL for node "model.nba_stats.FactPlayer"
+[0m14:40:26.499257 [debug] [Thread-3 (]: Writing injected SQL for node "model.nba_stats.stg_nba_stats"
+[0m14:40:26.500891 [debug] [Thread-2 (]: Began executing node model.nba_stats.stg_nba_salaries
+[0m14:40:26.503255 [debug] [Thread-2 (]: Using snowflake connection "model.nba_stats.stg_nba_salaries"
+[0m14:40:26.504146 [debug] [Thread-2 (]: On model.nba_stats.stg_nba_salaries: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_salaries"} */
+select current_warehouse() as warehouse
+[0m14:40:26.503764 [debug] [Thread-1 (]: Began executing node model.nba_stats.FactPlayer
+[0m14:40:26.504579 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m14:40:26.505020 [debug] [Thread-3 (]: Began executing node model.nba_stats.stg_nba_stats
+[0m14:40:26.506733 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.FactPlayer"
+[0m14:40:26.511216 [debug] [Thread-3 (]: Using snowflake connection "model.nba_stats.stg_nba_stats"
+[0m14:40:26.511728 [debug] [Thread-1 (]: On model.nba_stats.FactPlayer: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.FactPlayer"} */
+select current_warehouse() as warehouse
+[0m14:40:26.512120 [debug] [Thread-3 (]: On model.nba_stats.stg_nba_stats: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_stats"} */
+select current_warehouse() as warehouse
+[0m14:40:26.513281 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m14:40:26.589840 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.077 seconds
+[0m14:40:26.591569 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.FactPlayer"
+[0m14:40:26.591869 [debug] [Thread-1 (]: On model.nba_stats.FactPlayer: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.FactPlayer"} */
+use warehouse compute_wh
+[0m14:40:26.693116 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.101 seconds
+[0m14:40:26.723828 [debug] [Thread-1 (]: Writing runtime sql for node "model.nba_stats.FactPlayer"
+[0m14:40:26.725595 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.FactPlayer"
+[0m14:40:26.725992 [debug] [Thread-1 (]: On model.nba_stats.FactPlayer: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.FactPlayer"} */
+create or replace transient table MASTER.STAGE.FactPlayer
+         as
+        (with stats as (
+	select player,
+	age,
+	CASE 
+        WHEN COUNT(DISTINCT team) OVER (PARTITION BY player, year) > 1 THEN '2TM'
+        ELSE team
+    END AS team,
+	pos,
+	round(mp/g,1) as mpg,
+	round(pts/g,1) as ppg,
+	round(trb/g,1) as rpg,
+	round(ast/g,1) as apg,
+	round(stl/g,1) as spg,
+	round(blk/g,1) as bpg,
+	round(tov/g,1) as topg,
+	"FG%",
+	"3P%",
+	"FT%"
+	from MASTER.STAGE.nba_stats
+	where year = year(current_date)
+	QUALIFY ROW_NUMBER() OVER (PARTITION BY player, year ORDER BY team) = 1
+),
+salaries as (
+	select player,
+	CAST(replace(replace("2024-25",'$',''),',','') AS FLOAT) as salary,
+	from MASTER.STAGE.salaries
+	where player is not null
+	QUALIFY ROW_NUMBER() OVER (PARTITION BY player ORDER BY "2024-25") = 1
+)
+
+select
+	stats.player,
+	stats.age,
+	stats.team,
+	stats.pos,
+	stats.mpg,
+	stats.ppg,
+	stats.rpg,
+	stats.apg,
+	stats.spg,
+	stats.bpg,
+	stats.topg,
+	stats."FG%",
+	stats."3P%",
+	stats."FT%",
+	salaries.salary
+from stats
+left join salaries
+on stats.player = salaries.player
+        );
+[0m14:40:26.791410 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.287 seconds
+[0m14:40:26.792888 [debug] [Thread-2 (]: Using snowflake connection "model.nba_stats.stg_nba_salaries"
+[0m14:40:26.793344 [debug] [Thread-2 (]: On model.nba_stats.stg_nba_salaries: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_salaries"} */
+use warehouse compute_wh
+[0m14:40:26.863100 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.350 seconds
+[0m14:40:26.864047 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.070 seconds
+[0m14:40:26.866169 [debug] [Thread-3 (]: Using snowflake connection "model.nba_stats.stg_nba_stats"
+[0m14:40:26.881156 [debug] [Thread-3 (]: On model.nba_stats.stg_nba_stats: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_stats"} */
+use warehouse compute_wh
+[0m14:40:26.898419 [debug] [Thread-2 (]: Writing runtime sql for node "model.nba_stats.stg_nba_salaries"
+[0m14:40:26.900083 [debug] [Thread-2 (]: Using snowflake connection "model.nba_stats.stg_nba_salaries"
+[0m14:40:26.900419 [debug] [Thread-2 (]: On model.nba_stats.stg_nba_salaries: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_salaries"} */
+create or replace   view MASTER.STAGE.stg_nba_salaries
+  
+   as (
+    select * from MASTER.STAGE.salaries
+  );
+[0m14:40:26.967448 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.079 seconds
+[0m14:40:26.969660 [debug] [Thread-3 (]: Writing runtime sql for node "model.nba_stats.stg_nba_stats"
+[0m14:40:26.971013 [debug] [Thread-3 (]: Using snowflake connection "model.nba_stats.stg_nba_stats"
+[0m14:40:26.971419 [debug] [Thread-3 (]: On model.nba_stats.stg_nba_stats: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_stats"} */
+create or replace   view MASTER.STAGE.stg_nba_stats
+  
+   as (
+    select * from MASTER.STAGE.nba_stats
+  );
+[0m14:40:27.292158 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.391 seconds
+[0m14:40:27.309998 [debug] [Thread-2 (]: Using snowflake connection "model.nba_stats.stg_nba_salaries"
+[0m14:40:27.310488 [debug] [Thread-2 (]: On model.nba_stats.stg_nba_salaries: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_salaries"} */
+use warehouse COMPUTE_WH
+[0m14:40:27.391663 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.080 seconds
+[0m14:40:27.401516 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7bc7925f-7c2e-474a-a9b3-b6c9e7b9c845', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa64ba0c0>]}
+[0m14:40:27.403035 [info ] [Thread-2 (]: 2 of 3 OK created sql view model STAGE.stg_nba_salaries ........................ [[32mSUCCESS 1[0m in 0.92s]
+[0m14:40:27.405372 [debug] [Thread-2 (]: Finished running node model.nba_stats.stg_nba_salaries
+[0m14:40:27.701614 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.729 seconds
+[0m14:40:27.707612 [debug] [Thread-3 (]: Using snowflake connection "model.nba_stats.stg_nba_stats"
+[0m14:40:27.708556 [debug] [Thread-3 (]: On model.nba_stats.stg_nba_stats: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.stg_nba_stats"} */
+use warehouse COMPUTE_WH
+[0m14:40:27.783042 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.073 seconds
+[0m14:40:27.786879 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7bc7925f-7c2e-474a-a9b3-b6c9e7b9c845', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff83f40b30>]}
+[0m14:40:27.788537 [info ] [Thread-3 (]: 3 of 3 OK created sql view model STAGE.stg_nba_stats ........................... [[32mSUCCESS 1[0m in 1.31s]
+[0m14:40:27.789669 [debug] [Thread-3 (]: Finished running node model.nba_stats.stg_nba_stats
+[0m14:40:28.314094 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.587 seconds
+[0m14:40:28.319459 [debug] [Thread-1 (]: Using snowflake connection "model.nba_stats.FactPlayer"
+[0m14:40:28.320365 [debug] [Thread-1 (]: On model.nba_stats.FactPlayer: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "nba_stats", "target_name": "dev", "node_id": "model.nba_stats.FactPlayer"} */
+use warehouse COMPUTE_WH
+[0m14:40:28.402132 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.081 seconds
+[0m14:40:28.406469 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7bc7925f-7c2e-474a-a9b3-b6c9e7b9c845', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff88135eb0>]}
+[0m14:40:28.408174 [info ] [Thread-1 (]: 1 of 3 OK created sql table model STAGE.FactPlayer ............................. [[32mSUCCESS 1[0m in 1.93s]
+[0m14:40:28.409415 [debug] [Thread-1 (]: Finished running node model.nba_stats.FactPlayer
+[0m14:40:28.413527 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:40:28.414266 [debug] [MainThread]: Connection 'model.nba_stats.FactPlayer' was left open.
+[0m14:40:28.414896 [debug] [MainThread]: On model.nba_stats.FactPlayer: Close
+[0m14:40:28.502356 [debug] [MainThread]: Connection 'model.nba_stats.stg_nba_salaries' was left open.
+[0m14:40:28.503480 [debug] [MainThread]: On model.nba_stats.stg_nba_salaries: Close
+[0m14:40:28.588621 [debug] [MainThread]: Connection 'model.nba_stats.stg_nba_stats' was left open.
+[0m14:40:28.590015 [debug] [MainThread]: On model.nba_stats.stg_nba_stats: Close
+[0m14:40:28.671591 [info ] [MainThread]: 
+[0m14:40:28.673658 [info ] [MainThread]: Finished running 1 table model, 2 view models in 0 hours 0 minutes and 2.93 seconds (2.93s).
+[0m14:40:28.676861 [debug] [MainThread]: Command end result
+[0m14:40:28.716626 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/local/airflow/dags/dbt/nba_stats/target/manifest.json
+[0m14:40:28.720025 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/local/airflow/dags/dbt/nba_stats/target/semantic_manifest.json
+[0m14:40:28.727448 [debug] [MainThread]: Wrote artifact RunExecutionResult to /usr/local/airflow/dags/dbt/nba_stats/target/run_results.json
+[0m14:40:28.727886 [info ] [MainThread]: 
+[0m14:40:28.728353 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m14:40:28.728805 [info ] [MainThread]: 
+[0m14:40:28.729176 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m14:40:28.730997 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 3.7633097, "process_in_blocks": "72616", "process_kernel_time": 0.33163, "process_mem_max_rss": "207756", "process_out_blocks": "1961", "process_user_time": 2.285125}
+[0m14:40:28.731999 [debug] [MainThread]: Command `dbt run` succeeded at 14:40:28.731857 after 3.76 seconds
+[0m14:40:28.732705 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa47904d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8fc724b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff88c5fc50>]}
+[0m14:40:28.733183 [debug] [MainThread]: Flushing usage events
+[0m14:40:28.918081 [debug] [MainThread]: An error was encountered while trying to flush usage events
