@@ -1,0 +1,26 @@
+40c75d3922b0
+ INFO - ::group::Log message source details
+*** Found local files:
+***   * /usr/local/airflow/logs/dag_id=nba_data_pipeline/run_id=manual__2025-04-02T14:40:09.545798+00:00/task_id=upload_nba_salaries/attempt=1.log
+ INFO - ::endgroup::
+[2025-04-02T14:40:13.057+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-02T14:40:13.070+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: nba_data_pipeline.upload_nba_salaries manual__2025-04-02T14:40:09.545798+00:00 [queued]>
+[2025-04-02T14:40:13.076+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: nba_data_pipeline.upload_nba_salaries manual__2025-04-02T14:40:09.545798+00:00 [queued]>
+[2025-04-02T14:40:13.076+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2025-04-02T14:40:13.089+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): upload_nba_salaries> on 2025-04-02 14:40:09.545798+00:00
+[2025-04-02T14:40:13.144+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'nba_data_pipeline', 'upload_nba_salaries', 'manual__2025-04-02T14:40:09.545798+00:00', '--job-id', '268', '--raw', '--subdir', 'DAGS_FOLDER/upload_to_azure.py', '--cfg-path', '/tmp/tmpn2ncjp5w']
+[2025-04-02T14:40:13.148+0000] {logging_mixin.py:190} WARNING - /usr/local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=270) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-04-02T14:40:13.149+0000] {standard_task_runner.py:72} INFO - Started process 271 to run task
+[2025-04-02T14:40:13.149+0000] {standard_task_runner.py:105} INFO - Job 268: Subtask upload_nba_salaries
+[2025-04-02T14:40:13.198+0000] {task_command.py:467} INFO - Running <TaskInstance: nba_data_pipeline.upload_nba_salaries manual__2025-04-02T14:40:09.545798+00:00 [running]> on host 40c75d3922b0
+[2025-04-02T14:40:13.320+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='nba_data_pipeline' AIRFLOW_CTX_TASK_ID='upload_nba_salaries' AIRFLOW_CTX_EXECUTION_DATE='2025-04-02T14:40:09.545798+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-02T14:40:09.545798+00:00'
+[2025-04-02T14:40:13.323+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-04-02T14:40:13.353+0000] {base.py:84} INFO - Retrieving connection 'azure_blob_connection'
+[2025-04-02T14:40:13.997+0000] {get_token_mixin.py:148} INFO - ClientSecretCredential.get_token_info succeeded
+[2025-04-02T14:40:14.191+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/nba_salaries.csv to Azure Blob Storage as nba_salaries/nba_salaries_2025.csv
+[2025-04-02T14:40:14.193+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-04-02T14:40:14.211+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-04-02T14:40:14.212+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=nba_data_pipeline, task_id=upload_nba_salaries, run_id=manual__2025-04-02T14:40:09.545798+00:00, execution_date=20250402T144009, start_date=20250402T144013, end_date=20250402T144014
+[2025-04-02T14:40:14.292+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-02T14:40:14.318+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-04-02T14:40:14.319+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
