@@ -1,0 +1,8 @@
+
+apache-airflow-providers-microsoft-azure==12.2.1 # Azure provider for Airflow
+apache-airflow-providers-snowflake==6.1.1  # Snowflake provider for Airflow
+pandas==2.1.4                        # For data manipulation
+beautifulsoup4==4.11.1               # For web scraping
+requests==2.28.1                     # For making HTTP requests
+snowflake-connector-python>=3.0.0   # Snowflake Python connector
+astronomer-cosmos
