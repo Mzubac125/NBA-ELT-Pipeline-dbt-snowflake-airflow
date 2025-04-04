@@ -14,3 +14,6 @@ The goal of this project is to collect and process NBA data from online sources,
 * Snowflake: Data warehousing
 * SQL: Database querying
 
+## Extract and Load
+
+
