@@ -1,6 +1,7 @@
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 from airflow.operators.bash_operator import BashOperator
+from airflow.providers.microsoft.azure.operators.data_factory import AzureDataFactoryRunPipelineOperator
 from airflow.providers.microsoft.azure.hooks.wasb import WasbHook
 from airflow.providers.snowflake.hooks.snowflake import SnowflakeHook
 from datetime import datetime, timedelta, date
@@ -73,6 +74,7 @@ def get_nba_stats():
     return local_file_path
 
 def get_nba_salaries():
+    
     URL = 'https://www.basketball-reference.com/contracts/players.html'
     r = requests.get(URL)
     soup = BeautifulSoup(r.content, 'lxml')
@@ -82,12 +84,20 @@ def get_nba_salaries():
     data_rows = []
 
     for row in table_data[2:]:
+        #Find all table data
         data = row.find_all('td')
         individual_data = [i.text for i in data]
+        #Add data to the empty list
         data_rows.append(individual_data)
 
-    data_headers = [i.text for i in results.find_all('th')][33:42]
-    df = pd.DataFrame(data_rows, columns=data_headers)
+    #Get headers
+    data_headers = results.find_all('th', class_ = ['center','right', 'over_header center', 'sort_default_asc left'])
+    for row in data_headers:
+        titles = [i.text for i in data_headers]
+
+    titles = titles[33:42]
+
+    df = pd.DataFrame(data_rows, columns= titles)
 
     local_file_path = os.path.join(LOCAL_PATH, 'nba_salaries.csv')
     df.to_csv(local_file_path, index=False)
@@ -110,7 +120,8 @@ def load_data_to_snowflake(blob_name, table_name):
     SQL_QUERY = f"""
         COPY INTO {DATABASE}.{SCHEMA}.{table_name}
         FROM @{STAGE}/{blob_name}
-        FILE_FORMAT = (TYPE = 'CSV', SKIP_HEADER = 1, FIELD_OPTIONALLY_ENCLOSED_BY='"');
+        FILE_FORMAT = (TYPE = 'PARQUET')
+        MATCH_BY_COLUMN_NAME = case_insensitive;
     """
     hook = SnowflakeHook(snowflake_conn_id=SNOWFLAKE_CONN_ID)
     hook.run(SQL_QUERY)
@@ -150,11 +161,20 @@ upload_salaries_task = PythonOperator(
     dag=dag
 )
 
+convert_csv_to_parquet_in_adf = AzureDataFactoryRunPipelineOperator(
+    task_id="convert_csv_to_parquet",
+    pipeline_name="nba_convert_csv_to_parquet",
+    azure_data_factory_conn_id="azure_data_factory_conn",
+    resource_group_name="nba-rg",
+    factory_name="adf-nba-mzubac125",
+    dag=dag
+)
+
 load_stats_task = PythonOperator(
     task_id='load_nba_stats_to_snowflake',
     python_callable=load_data_to_snowflake,
     op_kwargs={
-        'blob_name': f"nba_stats/nba_stats_{date.today().year}.csv",
+        'blob_name': f"nba_stats/nba_stats.parquet",
         'table_name': TABLE_STATS
     },
     dag=dag
@@ -164,7 +184,7 @@ load_salaries_task = PythonOperator(
     task_id='load_nba_salaries_to_snowflake',
     python_callable=load_data_to_snowflake,
     op_kwargs={
-        'blob_name': f"nba_salaries/nba_salaries_{date.today().year}.csv",
+        'blob_name': f"nba_salaries/nba_salaries.parquet",
         'table_name': TABLE_SALARIES
     },
     dag=dag
@@ -178,7 +198,7 @@ dbt_run = BashOperator(
 )
 
 # Set task dependencies
-scrape_stats_task >> upload_stats_task >> load_stats_task
-scrape_salaries_task >> upload_salaries_task >> load_salaries_task
+scrape_stats_task >> upload_stats_task >> convert_csv_to_parquet_in_adf >> load_stats_task
+scrape_salaries_task >> upload_salaries_task >> convert_csv_to_parquet_in_adf >> load_salaries_task
 
 [load_stats_task, load_salaries_task] >> dbt_run
