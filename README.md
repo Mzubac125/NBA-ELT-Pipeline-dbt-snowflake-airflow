@@ -13,6 +13,7 @@ The goal of this project is to collect and process NBA data from online sources,
 * Azure Blob Storage: Cloud storage for raw data
 * Snowflake: Data warehousing
 * SQL: Database querying
+* Azure Data Factory (ADF): Converting CSV files to Parquet format
 
 ## Extract and Load
 
