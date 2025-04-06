@@ -4,7 +4,7 @@ This project implements a fully automated ETL (Extract, Transform, Load) and ELT
 ## Project Overview
 The goal of this project is to collect and process NBA data from online sources, transforming it into structured insights for analysis and visualization.
 
-<img width="931" alt="Image" src="https://github.com/user-attachments/assets/683cae6a-f1a0-48a2-88e1-ca9558e92936" />
+<img width="914" alt="Image" src="https://github.com/user-attachments/assets/38ec643a-c984-4e72-881b-5705162b753e" />
 
 ## Tech Stack
 * DBT (Data Build Tool): Data transformations
