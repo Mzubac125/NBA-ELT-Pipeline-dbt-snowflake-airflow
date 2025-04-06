@@ -53,6 +53,10 @@ CREATE STAGE master.stage.nba_stats_stage
   CREDENTIALS = (AZURE_SAS_TOKEN = 'sp=racwdlmeo&st=2025-03-27T14:40:37Z&se=2025-05-29T22:40:37Z&spr=https&sv=2024-11-04&sr=c&sig=Ro3t4ytg8QHSwlzGPrdOY%2BicQq6OnljduGMdUqxmmBo%3D')
   FILE_FORMAT = (TYPE = 'CSV', FIELD_OPTIONALLY_ENCLOSED_BY = '"', SKIP_HEADER = 1);
 
+CREATE OR REPLACE FILE FORMAT parquet_format
+  TYPE = 'PARQUET';
+ALTER STAGE nba_stats_stage
+  SET FILE_FORMAT = parquet_format;
 
 LIST @master.stage.nba_stats_stage;
   
