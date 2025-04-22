@@ -1,5 +1,4 @@
-# NBA-ELT-Pipeline-dbt-snowflake-airflow
-This project demonstrates an end-to-end ELT data pipeline for processing NBA data. I began by web scraping player statistics and salary data from [Basketball Reference](https://www.basketball-reference.com/) using Python and BeautifulSoup. The raw data was saved as CSV files and uploaded to Azure Data Lake for cloud storage. Using Azure Data Factory (ADF), I built a pipeline to convert the CSV files into Parquet format, optimizing the data for analytics and storage efficiency. The Parquet files were then loaded into Snowflake, a cloud-based data warehouse, using an Airflow-managed ELT process. From there, I used dbt (Data Build Tool) to transform the raw data in Snowflake into clean, analysis-ready models. Finally, I connected the curated data to Tableau and built an interactive dashboard to visualize player performance and salary trends.
+# Data Engineering Project: ELT Pipeline for NBA Statistics
 
 ## Project Overview
 The goal of this project is to collect and process NBA data from online sources, transforming it into structured insights for analysis and visualization.
@@ -21,6 +20,9 @@ I web scraped player statistics and salary data from [Basketball Reference](http
 ## Data Ingestion and Storage
 * Apache Airflow is used to orchestrate the data pipeline. Airflow automates extracting the player statistics and salary data from Basketball Reference.
 * The extracted data is then stored in an Azure Data Lake, which serves as the staging area for the raw data.
+
+## Data Format Conversion
+I used Azure Data Factory to convert raw CSV files into Parquet format, enabling more efficient storage and faster query performance for downstream processing.
 
 ## Data Warehousing
 From Azure DLS, the data is loaded into Snowflake, a cloud-based data warehousing solution.
