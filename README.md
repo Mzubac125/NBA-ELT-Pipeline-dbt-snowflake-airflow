@@ -14,3 +14,21 @@ The goal of this project is to collect and process NBA data from online sources,
 * Snowflake: Data warehousing
 * SQL: Database querying
 * Azure Data Factory (ADF): Converting CSV files to Parquet format
+
+## Data Source
+I web scraped player statistics and salary data from [Basketball Reference](https://www.basketball-reference.com/) using Python and BeautifulSoup.
+
+## Data Ingestion and Storage
+* Apache Airflow is used to orchestrate the data pipeline. Airflow automates extracting the player statistics and salary data from Basketball Reference.
+* The extracted data is then stored in an Azure Data Lake, which serves as the staging area for the raw data.
+
+## Data Warehousing
+From Azure DLS, the data is loaded into Snowflake, a cloud-based data warehousing solution.
+
+## Data Transformation
+I used dbt for my data transformation because dbt enables modular, version-controlled SQL development directly within the Snowflake environment. This setup allowed me to build reliable, well-documented data models, implement automated testing, and ensure efficient, scalable transformations using Snowflake’s compute power.
+
+## Data Visualization
+Once the data is transformed and stored in Snowflake, Tableau is used for creating visualizations, dashboards, and reports. This step enables stakeholders to derive insights from the NBA data.
+
+![Image](https://github.com/user-attachments/assets/f0005bf2-730f-4915-8fc2-0f3e54c7a547)
