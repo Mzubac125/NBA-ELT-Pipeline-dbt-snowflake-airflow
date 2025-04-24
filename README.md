@@ -1,4 +1,4 @@
-# Data Engineering Project: ELT Pipeline for NBA Statistics
+# Analytics Engineering Project: ELT Pipeline for NBA Statistics
 
 ## Project Overview
 The goal of this project is to collect and process NBA data from online sources, transforming it into structured insights for analysis and visualization.
