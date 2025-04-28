@@ -3,7 +3,7 @@
 ## Project Overview
 The goal of this project is to collect and process NBA data from online sources, transforming it into structured insights for analysis and visualization.
 
-Video Link: https://youtu.be/r7WqfFBfnL8?si=BEgQWIaixTl1HQJe
+Video Demonstration Link: https://youtu.be/r7WqfFBfnL8?si=BEgQWIaixTl1HQJe
 
 <img width="914" alt="Image" src="https://github.com/user-attachments/assets/38ec643a-c984-4e72-881b-5705162b753e" />
 
