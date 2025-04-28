@@ -5,6 +5,9 @@ The goal of this project is to collect and process NBA data from online sources,
 
 <img width="914" alt="Image" src="https://github.com/user-attachments/assets/38ec643a-c984-4e72-881b-5705162b753e" />
 
+Video Link: https://youtu.be/r7WqfFBfnL8?si=BEgQWIaixTl1HQJe
+
+
 ## Tech Stack
 * DBT (Data Build Tool): Data transformations
 * Airflow: Workflow orchestration and scheduling
