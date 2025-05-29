@@ -16,7 +16,7 @@ AZURE_PATH_SALARIES = 'nba_salaries/'
 LOCAL_PATH = '/tmp/'
 AZURE_ACCOUNT_NAME = 'nbastorage'
 AZURE_CONTAINER_NAME = 'nbastorage'
-AZURE_CONN_ID = 'azure_blob_connection'  # Ensure this exists in Airflow UI
+AZURE_CONN_ID = 'azure_blob_connection'
 
 #Snowflake Constants
 SNOWFLAKE_CONN_ID = 'snowflake_conn'
